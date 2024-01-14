@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color:#fffcf7;
 }
 
 .image-container {
@@ -19,9 +20,9 @@ body{
     background-color: rgba(0, 0, 0, 0); 
     padding: 10px;
     position: absolute;
-    width: 100%;
+    width: 38%;
     top: 1.5%;
-    left: 35%;
+    left: 31.5%;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -29,9 +30,10 @@ body{
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 10px 15px;
     display: inline-block;
     font-size:20px;
+    font-weight: 700;
 }
 
 .navbar a:hover {
@@ -96,4 +98,208 @@ body{
 .content {
     text-align: center;
     margin-top: 20px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow boxes to wrap to the next line if the screen is too small */
+    height: 65vh;
+}
+
+.box {
+    width: 23%;
+    border: 0.2px solid #ccc;
+    text-align: center;
+    /*padding: 20px;*/
+    margin:10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.box-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+/*.box img {
+    max-width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}*/
+.center-content {
+    text-align: center;
+}
+
+.box-button{
+    margin:0px;
+    padding: 13px 100px;
+    background-color: white; 
+    color: black; 
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 30px;
+    border:none;
+}
+
+.box-text {
+    margin-top: 10px;
+    color:black;
+}
+
+.box h2{
+    color: white;
+    font-weight: 700;
+    margin:0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    margin-top:50px;
+}
+
+/* Image for the top part menu page */
+.photo {
+    float: left;
+    width: 50%; 
+}
+
+/* Text for the top part of menu page */
+.details {
+    text-align:center;
+    float: right;
+    width: 30%; 
+    padding: 20px; 
+    margin-top: 120px;
+    margin-right:60px;
+    margin-left:130px;
+}
+
+.details-button{
+    margin:0px;
+    padding: 13px 160px;
+    background-color: #ffe2b8; 
+    color: black; 
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 30px;
+    border-radius: 20px;
+    border:none;
+}
+
+.photo img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin-top: 50px;
+    margin-left: 140px;
+    margin-right:30px;
+    border-radius:15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+#slider-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height:100vh;
+    margin-top: 140px;
+    overflow: hidden;
+    position: relative;
+}
+
+#image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0); /* Adjust background color with transparency */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.slide-content h3 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.slide-button {
+    padding: 17px 160px;
+    margin-top:20px;
+    font-size: 20px;
+    background-color: #ededed; /* Adjust button background color */
+    color: black; /* Adjust button text color */
+    border: none;
+    cursor: pointer;
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 70px;
+    color:rgb(224, 224, 224);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 20% 5%; 
+    border-radius: 0; 
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+#prev:hover, #next:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+#prev { left: 0px; }
+#next { right: 0px; }
+
+.social-icon img {
+    width: 30px; 
+    height: auto; 
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:20px;
 }
