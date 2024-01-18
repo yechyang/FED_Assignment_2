@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -21,91 +22,88 @@
       </form>
     </div>
 
-    <section>
-      <h1 style="text-align: center;margin-top:80px;margin-bottom:0px">Search By Category</h1>
-      <hr>
-      <div class="box-container"> <!--Contain the boxes -->
-        <!--Using of a href to let user click leading them to menu page-->
-        <a href="#" class="box"> <!--Box 1-->
-            <h4 style="color:rgb(0, 0, 0)">T-Shirt</h4>
-            <img src="clothing-image/T-Shirt-Category.png" Class="T-Shirt" alt="T-Shirt">
-        </a>
-        <a href="#" class="box"><!--Box 2-->
-          <h4 style="color:rgb(0, 0, 0)">Shirts</h4>
-            <img src="clothing-image/shirt.png" Class="shirts" alt="shirts">
-        </a>
-        <a href="#" class="box"><!--Box 3-->
-          <h4 style="color:rgb(0, 0, 0)">Pants</h4>
-            <img src="clothing-image/pants.png" Class="Pants" alt="Pants">
-        </a>
+    <div class="container mt-5">
+      <h1 style="text-align: center;margin-top:80px">Search by Category</h1>
+      <div class="row">
+        <!-- First Row -->
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">T-Shirt</h5>
+          <img src="clothing-image/T-Shirt-Category.png" class="img-fluid" alt="Image 1">
+        </div>
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">Shirt</h5>
+          <img src="clothing-image/shirt.png" class="img-fluid" alt="Image 2">
+        </div>
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">Pants</h5>
+          <img src="clothing-image/pants.png" class="img-fluid" alt="Image 3">
+        </div>
+    
+        <!-- Second Row -->
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">Sweater</h5>
+          <img src="clothing-image/sweater.jpg" class="img-fluid" alt="Image 4">
+        </div>
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">Shorts</h5>
+          <img src="clothing-image/shorts.png" class="img-fluid" alt="Image 5">
+        </div>
+        <div class="col-md-4 custom-image-container">
+          <h5 style="color:rgb(0, 0, 0); text-align: center;">Belt</h5>
+          <img src="clothing-image/belt.png" class="img-fluid" alt="Image 6">
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="box-container-2"> <!--Contain the boxes -->
-        <!--Using of a href to let user click leading them to menu page-->
-        <a href="#" class="box-2"> <!--Box 1-->
-            <h4 style="color:rgb(0, 0, 0)">Sweater/Hoodie</h4>
-            <img src="clothing-image/sweater.jpg" Class="Sweater" alt="Sweater">
-        </a>
-        <a href="#" class="box-2"><!--Box 3-->
-          <h4 style="color:rgb(0, 0, 0)">Shorts</h4>
-            <img src="clothing-image/shorts.png" Class="Shorts" alt="Shorts">
-        </a>
-        <a href="#" class="box-2"><!--Box 2-->
-          <h4 style="color:rgb(0, 0, 0)">Belt</h4>
-            <img src="clothing-image/belt.png" Class="Belt" alt="Belt">
-        </a>
-      </div>
-    </section>
-
-    <section id="Browse">
-      <h1 style="text-align: center;margin-top:150px;margin-bottom:0px">Best Seller</h1>
+    <div class="container mt-5" style="padding: 30px; max-width: none;">
+      <h1 style="text-align: center;margin-top:100px">Best Sellers</h1>
       <hr>
-      <div class="box-container-3"> <!--Contain the boxes -->
-        <!--Using of a href to let user click leading them to menu page-->
-        <a href="#" class="bigbox-3"> <!--Box 1-->
-            <h2 style="color:rgb(0, 0, 0)">1</h2>
-            <img src="clothing-image/dry-ex-shorts.png" Class="Shorts" alt="Shorts">
-            <div class="box-text-3">
-              <p>Ultra Stretch DRY-EX Shorts</p>
-              <p>Size: L</p>
-              <p style="color:rgb(255, 0, 0)">S$19.90</p>
-              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(381)</p>
-            </div>
-        </a>
-        <a href="#" class="box-3"><!--Box 2-->
+      <div class="row">
+        <!-- Third Row -->
+        <div class="col-md-3 custom-image-container-third">
+          <h2 style="color:rgb(0, 0, 0)">1</h2>
+          <div style="text-align: center;">
+            <h5>Ultra Stretch DRY-EX Shorts</h5>
+            <p style="font-size:20px">Size: L</p>
+            <p style="color:rgb(255, 0, 0);font-size:24px;">S$19.90</p>
+            <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(381)</p>
+          </div>
+          <img src="clothing-image/dry-ex-shorts.png" class="img-fluid" alt="Left Image">
+        </div>
+        <div class="col-md-3 custom-image-container-third">
           <h2 style="color:rgb(0, 0, 0)">2</h2>
-            <img src="clothing-image/CrewNeck-T-Shirt.png" Class="T-SHIRT" alt="T-SHIRT">
-            <div class="box-text-3">
-              <p>Cotton Crew Neck T-Shirt</p>
-              <p>Size: L</p>
-              <p style="color:rgb(255, 0, 0)">S$9.90</p>
-              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(271)</p>
-            </div>
-        </a>
-        <a href="#" class="box-3"><!--Box 3-->
+          <div style="text-align: center;">
+            <h5>Cotton Crew Neck T-Shirt</h5>
+            <p style="font-size:20px">Size: L</p>
+            <p style="color:rgb(255, 0, 0);font-size:24px;">S$9.90</p>
+            <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(271)</p>
+          </div>
+          <img src="clothing-image/CrewNeck-T-Shirt.png" class="img-fluid" alt="Right Image 1">
+          <div>
+          </div>
+        </div>
+        <div class="col-md-3 custom-image-container-third">
           <h2 style="color:rgb(0, 0, 0)">3</h2>
-            <img src="clothing-image/hoodie.png" Class="Hoodie" alt="Hoodie">
-            <div class="box-text-3">
-              <p>Sweat Long Sleeve Full-Zip Hoodie</p>
-              <p>Size: M</p>
-              <p style="color:rgb(255, 0, 0)">S$49.90</p>
-              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(210)</p>
-            </div>
-        </a>
-        <a href="#" class="box-3"><!--Box 3-->
+          <div style="text-align: center;">
+            <h5>Sweat Long Sleeve Full-Zip Hoodie</h5>
+            <p style="font-size:20px">Size: M</p>
+            <p style="color:rgb(255, 0, 0);font-size:24px;">S$49.90</p>
+            <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(210)</p>
+          </div>
+          <img src="clothing-image/hoodie.png" class="img-fluid" alt="Right Image 2">
+        </div>
+        <div class="col-md-3 custom-image-container-third">
           <h2 style="color:rgb(0, 0, 0)">4</h2>
-          <img src="clothing-image/shortsleeve-T-Shirt.png" Class="T-SHIRT" alt="T-SHIRT">
-          <div class="box-text-3">
-            <p>Crew Neck Short Sleeve T-Shirt</p>
-            <p>Size: L</p>
-            <p style="color:rgb(255, 0, 0)">S$14.90</p>
+          <div style="text-align: center;">
+            <h5>Crew Neck Short Sleeve T-Shirt</h5>
+            <p style="font-size:20px">Size: L</p>
+            <p style="color:rgb(255, 0, 0);font-size:24px;">S$14.90</p>
             <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(177)</p>
           </div>
-        </a>
+          <img src="clothing-image/shortsleeve-T-Shirt.png" class="img-fluid" alt="Right Image 3">
+        </div>
       </div>
-    </section>
+    </div>
 
 
     <section>
@@ -123,6 +121,9 @@
     <script>
       includeHTML();
     </script>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   </body>
 </html>
