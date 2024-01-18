@@ -20,9 +20,9 @@ body{
     background-color: rgba(0, 0, 0, 0); 
     padding: 10px;
     position: absolute;
-    width: 38%;
+    width: 41%;
     top: 1.5%;
-    left: 31.5%;
+    left: 29%;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -30,9 +30,9 @@ body{
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 0px;
     display: inline-block;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 700;
 }
 

@@ -6,26 +6,49 @@ body {
     color: #fff;
 }
 header {
-    background-color: #333;
+    background-color: #fffbf7;
     color: #fff;
-    padding: 5px;
     text-align: center;
     font-family: 'Exo 2', sans-serif;
+    position: relative;
 }
+
+.logo {
+    margin-top:20px;
+    margin-bottom:20px;
+    max-width: 80px; 
+
+}
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+}
+
+.additional-logo {
+    max-width: 30px;
+    margin-left: 10px;
+    margin-right:20px;
+}
+
 nav {
     display: flex;
     justify-content: center;
-    background-color: #444; 
+    background-color: #9f9a94; 
     padding: 10px;
 }
 nav a {
     color: #fff;
+    font-size:22px;
+    font-weight:700;
     text-decoration: none;
     padding: 10px;
-    margin: 0 10px;
+    margin: 0px 25px;
     transition: color 0.3s;
             }
 nav a:hover {
-    color: #ffcc00; 
+    color: gray; 
 }
 

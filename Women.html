@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="js/w3-include-HTML.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div class="women-background-img">
+      <div class="text_above_button">
+        <p>Dress your best, feel your best, because style is a mood you can wear!</p>
+      </div>
+      <form action="#Browse" method="get">
+          <button class="button">Browse More!</button> <!--having the call to action to lead them to order page-->
+      </form>
+    </div>
+
+    <section>
+      <h1 style="text-align: center;margin-top:80px;margin-bottom:0px">Search By Category</h1>
+      <hr>
+      <div class="box-container"> <!--Contain the boxes -->
+        <!--Using of a href to let user click leading them to menu page-->
+        <a href="#" class="box"> <!--Box 1-->
+            <h4 style="color:rgb(0, 0, 0)">T-Shirt</h4>
+            <img src="clothing-image/women-tshirt.png" Class="T-Shirt" alt="T-Shirt">
+        </a>
+        <a href="#" class="box"><!--Box 2-->
+          <h4 style="color:rgb(0, 0, 0)">Blouse</h4>
+            <img src="clothing-image/women-blouse.png" Class="Blouse" alt="Blouse">
+        </a>
+        <a href="#" class="box"><!--Box 3-->
+          <h4 style="color:rgb(0, 0, 0)">outerwear</h4>
+            <img src="clothing-image/women-outerwear.png" Class="outerwear" alt="outerwear">
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="box-container-2"> <!--Contain the boxes -->
+        <!--Using of a href to let user click leading them to menu page-->
+        <a href="#" class="box-2"> <!--Box 1-->
+            <h4 style="color:rgb(0, 0, 0)">Bottoms</h4>
+            <img src="clothing-image/women-bottoms.png" Class="Bottoms" alt="Bottoms">
+        </a>
+        <a href="#" class="box-2"><!--Box 3-->
+          <h4 style="color:rgb(0, 0, 0)">Skirt</h4>
+            <img src="clothing-image/skirt.png" Class="Skirt" alt="Skirt">
+        </a>
+        <a href="#" class="box-2"><!--Box 2-->
+          <h4 style="color:rgb(0, 0, 0)">Dress</h4>
+            <img src="clothing-image/dress.png" Class="Dress" alt="Dress">
+        </a>
+      </div>
+    </section>
+
+    <section id="Browse">
+      <h1 style="text-align: center;margin-top:150px;margin-bottom:0px">Best Seller</h1>
+      <hr>
+      <div class="box-container-3"> <!--Contain the boxes -->
+        <!--Using of a href to let user click leading them to menu page-->
+        <a href="#" class="bigbox-3"> <!--Box 1-->
+            <h2 style="color:rgb(0, 0, 0)">1</h2>
+            <img src="clothing-image/dry-ex-shorts.png" Class="Shorts" alt="Shorts">
+            <div class="box-text-3">
+              <p>Ultra Stretch DRY-EX Shorts</p>
+              <p>Size: L</p>
+              <p style="color:rgb(255, 0, 0)">S$19.90</p>
+              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(381)</p>
+            </div>
+        </a>
+        <a href="#" class="box-3"><!--Box 2-->
+          <h2 style="color:rgb(0, 0, 0)">2</h2>
+            <img src="clothing-image/CrewNeck-T-Shirt.png" Class="T-SHIRT" alt="T-SHIRT">
+            <div class="box-text-3">
+              <p>Cotton Crew Neck T-Shirt</p>
+              <p>Size: L</p>
+              <p style="color:rgb(255, 0, 0)">S$9.90</p>
+              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(271)</p>
+            </div>
+        </a>
+        <a href="#" class="box-3"><!--Box 3-->
+          <h2 style="color:rgb(0, 0, 0)">3</h2>
+            <img src="clothing-image/hoodie.png" Class="Hoodie" alt="Hoodie">
+            <div class="box-text-3">
+              <p>Sweat Long Sleeve Full-Zip Hoodie</p>
+              <p>Size: M</p>
+              <p style="color:rgb(255, 0, 0)">S$49.90</p>
+              <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(210)</p>
+            </div>
+        </a>
+        <a href="#" class="box-3"><!--Box 3-->
+          <h2 style="color:rgb(0, 0, 0)">4</h2>
+          <img src="clothing-image/shortsleeve-T-Shirt.png" Class="T-SHIRT" alt="T-SHIRT">
+          <div class="box-text-3">
+            <p>Crew Neck Short Sleeve T-Shirt</p>
+            <p>Size: L</p>
+            <p style="color:rgb(255, 0, 0)">S$14.90</p>
+            <div class="star-rating checked">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>(177)</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="men-video-background"> <!--A video background that run repeatedly for visual-->
+          <video autoplay muted loop>
+              <source src="videos/pexels-artem-podrez-6787106 (2160p).mp4" type="video/mp4">
+          </video>
+          <h1>Elevate Your Style Today</h1>
+      </div>
+    </section>
+
+
+
+    <footer w3-include-html="footer.html"></footer>
+    <script>
+      includeHTML();
+    </script>
+    
+  </body>
+</html>
