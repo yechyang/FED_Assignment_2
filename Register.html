@@ -13,23 +13,57 @@
             margin: 25px;
         }
         #register form{
-            display: flex;
-            flex-direction: column;
-
-            background-color: rgb(115, 166, 122);
-            width: 660px;
+ 
+            background-color: rgba(62, 62, 62, 0.3);
+            width: 550px;
         }
         #register h3{
             display: flex;
             justify-content: center;
+            margin:10px;
         }
+
         #register input{
             display:block;
             width: 350px;
+            margin: 0 auto; /* Center the input horizontally */
         }
-        .gender{
+        #register label {
+            margin-left: 100px;
+        }
+
+        #register legend{
+            margin-left: 101px;
+            font-size: 16px;
+        }
+
+        #register .gender {
             display: flex;
-            justify-content: space-around;
+            flex: 1;
+            justify-content: space-evenly;
+            max-width: 350px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            align-items: center; /* Center items vertically */
+        }
+
+        #register .gender label {
+            align-items: baseline; /* Align labels based on baseline */
+        }
+        
+        #register #register-button{
+            display: flex;
+            justify-content: center;
+        }
+        
+        #register button{
+            background-color: black;
+            color: white;
+            width: 130px;
+            height: 35px;
+            font-size: 20px !important;
+            border-radius: 10px;
+            margin: 25px;
         }
 
     </style>
@@ -61,27 +95,28 @@
             <input type="text" id="address" required>
             <br>
             
-            <fieldset>
-                <legend>Gender:</legend>
-                <div class ='gender'>
-                    <div>
-                        <input type="radio" id="male" name="gender">
-                        <label for='male'>Male</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="female" name="gender">
-                        <label for='female'>Female</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="unselect" name="gender">
-                        <label for='unselect'>Unselect</label>
-                    </div>
-                </div>
-                <br>
-            </fieldset>
-            
-        </form>
 
+            <legend>Gender:</legend>
+            <div class ='gender'>
+                <div>
+                    <input type="radio" id="male" name="gender">
+                    <label for='male'>Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="gender">
+                    <label for='female'>Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="unselect" name="gender">
+                    <label for='unselect'>Unselect</label>
+                </div>
+            </div>
+            <br>
+
+            <div id="register-button">
+                <button type="submit" value="register" id="register-submit">Register</button>
+            </div>
+        </form>
     </section>     
 
     <footer w3-include-html="footer.html"></footer>
