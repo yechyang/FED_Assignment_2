@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-in</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        #login-form{
+            display: flex;
+            justify-content: center;
+        }
+        #login-title{
+            color: black;
+        }
+        #login-form form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: aqua;
+            width: 700px;
+            margin: 25px;
+        }
+        #sign-in{
+            background-color: black;
+            color: white;
+            width: 130px;
+            height: 35px;
+            font-size: 20px !important;
+            border-radius: 10px;
+        }
+        #identification input {
+            width: 350px;
+            height: 25px;
+            margin: 7px;
+        }
+        #identification{
+            display: flex;
+            flex-direction: column;
+        }
+        #remember-password{
+            display: flex;
+            flex-direction: row;
+
+        }
+        #remember-password p {
+            color: black;
+            margin-left: 5px;
+        }
+        #account{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #account a{
+            margin: 25px;
+            color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <header><div w3-include-HTML="header.html"></div></header>
+
+    <section id="login-form">
+        <form>
+            <h2 id="login-title">Login</h2>
+
+            <div id="identification">
+                <input type="text" placeholder="Username/ Email" id="Username" required>
+                <input type="password" placeholder="Password" id="password" required>
+            </div>
+
+            <div id="remember-password">
+                <input type="checkbox">
+                <p>Remember Password</p>
+            </div>
+
+            <div id="login-button">
+                <button id="sign-in">Sign In</button>
+            </div>
+
+            <div id="account">
+                <a href="#">Forget Password</p>
+                <a href="Register.html">Create Account</a>
+            </div>
+        </form>
+    </section>
+    <script>
+        includeHTML();
+      </script>
+    <script src="js/w3-include-HTML.js"></script>
+
+</body>
+</html>

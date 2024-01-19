@@ -4,11 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="icon" href="images/tshirt.png" type="image/png">
+    <style>
+        #register{
+            display: flex;
+            justify-content: center;
+            margin: 25px;
+        }
+        #register form{
+            display: flex;
+            flex-direction: column;
+
+            background-color: rgb(115, 166, 122);
+            width: 660px;
+        }
+        #register h3{
+            display: flex;
+            justify-content: center;
+        }
+        #register input{
+            display:block;
+            width: 350px;
+        }
+        .gender{
+            display: flex;
+            justify-content: space-around;
+        }
+
+    </style>
 </head>
 <body>
     <header w3-include-html="header.html"></header>
 
+    <section id="register">
+        <form method ="GET">
+            <h3><u>Signing Up</u></h3>
+
+            <label for = 'username'>Enter your Username:</label>
+            <input type="text" id="username" required>
+            <br>
+
+            <label for ='contact'>Enter your phone number:</label>
+            <input type="number" id="contact" required>
+            <br>
+
+            <label for="email">Enter your email address:</label>
+            <input type="email" id="email" required>
+            <br>
+
+            <label for="password">Create your password:</label>
+            <input type="text" id="password" required>
+            <br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+            <br>
+            
+            <fieldset>
+                <legend>Gender:</legend>
+                <div class ='gender'>
+                    <div>
+                        <input type="radio" id="male" name="gender">
+                        <label for='male'>Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="female" name="gender">
+                        <label for='female'>Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="unselect" name="gender">
+                        <label for='unselect'>Unselect</label>
+                    </div>
+                </div>
+                <br>
+            </fieldset>
+            
+        </form>
+
+    </section>     
+
     <footer w3-include-html="footer.html"></footer>
+    <script>
+        includeHTML();
+    </script>
+    <script src="js/w3-include-HTML.js"></script>
+    
 </body>
 </html>
