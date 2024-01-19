@@ -9,15 +9,17 @@
         #login-form{
             display: flex;
             justify-content: center;
+            margin-top:70px;
         }
         #login-title{
-            color: black;
+            color: whitesmoke;
         }
         #login-form form{
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: aqua;
+            border-radius: 25px;
+            background-color: rgba(62, 62, 62, 0.3);
             width: 700px;
             margin: 25px;
         }
@@ -44,7 +46,7 @@
 
         }
         #remember-password p {
-            color: black;
+            color: whitesmoke;
             margin-left: 5px;
         }
         #account{
@@ -53,12 +55,24 @@
         }
         #account a{
             margin: 25px;
-            color: black;
+            color: whitesmoke;
+        }
+
+        .shop-background{
+            background-image: url('/FED_Assignment_2/images/black-white-minimal-portrait.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: transparent;
+            padding: 0;
+            position: relative;
+            display:block;
+            z-index: -1;
         }
     </style>
 
 </head>
-<body>
+<body class="shop-background">
     <header><div w3-include-HTML="header.html"></div></header>
 
     <section id="login-form">
