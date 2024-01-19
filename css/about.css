@@ -1,0 +1,113 @@
+.image-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.about-image{
+    width: 100%;
+    object-fit: cover;
+}
+
+.branding {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 34px;
+    font-weight:700;
+}
+
+.shrink-image {
+    max-width: 120px;
+    max-height: 150px;
+    margin-bottom:100px;
+    margin-top:40px;
+}
+
+
+.slider-background{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding: 0;
+    position: relative;
+    height: 80vh;
+    display:block;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* styling for the slider */
+.slider-bottom {
+    width: 100%;
+    margin: 0 -150px;
+    padding: 0 150px;
+    position: relative;
+    background:transparent;
+}
+
+.slider-bottom-text {
+    margin: -20px 0;
+    display: none;
+    animation: slideIn 3s ease-in-out forwards;
+}
+
+/* styling for the text in slider */
+.text-below-box{
+    text-align:center;
+    font-size: 20px;
+    color: ghostwhite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(28%);
+    }
+}
+
+.slider-bottom-text:first-child {
+    display: block;
+}
+
+/* Dots for slider */
+.dots-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dot:hover {
+    background-color: #717171;
+}
+

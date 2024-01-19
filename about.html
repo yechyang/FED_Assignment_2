@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYC Bakery</title>
+    <link rel="icon" href="images/tshirt.png" type="image/png">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <header w3-include-html="header.html"></header>
+
+    <div class="image-container">
+        <img class="about-image" src="images/grayscale-shot-male-walking-along-pedestrian-zone-near-building.jpg" alt="">
+        <div class="branding">LYC Clothing</div>
+    </div>
+
+    <div style="margin-top:120px;">
+        <h1 style="text-align:center">About Us</h1>
+        <p style="text-align: center;margin-left:420px;margin-right:420px;font-size:20px;">Welcome to LYC Clothing, where fashion meets passion! At LYC Clothing, we believe that clothing is an expression of individuality, a canvas to showcase your unique style. Established in 2020, our online store has quickly become a go-to destination for fashion-forward individuals seeking the latest trends and timeless classics.</p>
+        <p style="text-align: center;margin-left:420px;margin-right:420px;font-size:20px;">Our Philosophy: Clothing, for us, is more than just fabric and stitches; it's a powerful medium for self-expression. We believe that every individual is a masterpiece, and their style is a canvas waiting to be painted with creativity and personality. At LYC Clothing, we empower you to embrace your uniqueness, encouraging you to tell your story through the outfits you choose.</p>
+    </div>
+
+    <div style="margin-top:100px;">
+        <h1 style="text-align:center">Our Promise</h1>
+        <p style="text-align: center;margin-left:450px;margin-right:450px;font-size:20px;margin-bottom:40px;"><strong>Quality Assurance:</strong> Every item at Trendy Threads is carefully inspected to ensure it meets our high standards of quality and craftsmanship.</p>
+        <p style="text-align: center;margin-left:450px;margin-right:450px;font-size:20px;margin-bottom:40px;"><strong>Fast and Reliable Shipping:</strong> We understand the excitement of receiving your new wardrobe additions promptly. That's why we prioritize fast and reliable shipping to get your order to you as soon as possible.</p>
+        <p style="text-align: center;margin-left:450px;margin-right:450px;font-size:20px;"><strong>Secure Shopping Experience: </strong> Your privacy and security are of the utmost importance to us. Our website uses state-of-the-art encryption technology to ensure your information is protected.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-2 text-center">
+                <img src="images/quality-control.png" alt="Icon 1" class="shrink-image">
+            </div>
+            <div class="col-md-2 text-center">
+                <img src="images/delivery.png" alt="Icon 2" class="shrink-image">
+            </div>
+            <div class="col-md-2 text-center">
+                <img src="images/credit-card.png" alt="Icon 3" class="shrink-image">
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div style="margin-top:50px;">
+        <h1 style="text-align:center">Images</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/businessmen-businesswomen-meeting-brainstorming-ideas.jpg" alt="Image 1" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <img src="images/top-view-cloths-made-with-different-natural-pigments-with-copy-space.jpg" alt="Image 2" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/view-trucker-hat-with-baseball-equipment.jpg" alt="Image 3" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <img src="images/business-success-teamwork-concept-with-wooden-figures-people-side-view.jpg" alt="Image 4" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="slider-background" style="margin-top:100px;"> <!--Background video loop-->
+            <video autoplay muted loop>
+                <source src="videos/mixkit-a-person-working-with-fabric-14872-medium.mp4" type="video/mp4">
+            </video>
+            <div class="text-below-box"> <!--Slider with 3 different text-->
+                <h2 style="font-size: 50px;font-weight: bold;font-family:'Pacificoregular'">Core values</h2><br><br>
+                <div class="slider-bottom">
+                    <div class="slider-bottom-text" data-index="1">
+                        <p><strong style="font-size: 28px;font-family:'Courier New', Courier, monospace">Integrity</strong><br><br> We conduct our business with the highest ethical standards. Ensuring honesty and transparency for our actions and decisions.</p>
+                    </div>
+                    <div class="slider-bottom-text" data-index="2">
+                        <p><strong style="font-size: 28px;font-family:'Courier New', Courier, monospace">Innovation</strong><br><br> Embracing creativity and forward-thinking for continous improvement and adaptability driving our success.</p>
+                    </div>
+                    <div class="slider-bottom-text" data-index="3">
+                        <p><strong style="font-size: 28px;font-family:'Courier New', Courier, monospace">Sustainability</strong><br><br> We are committed to environmental responsibility. Sustainable practices are integrated into our operations and product while maintaining product quality.</p>
+                    </div>
+                </div>
+                
+                <div class="dots-container"> <!--The dots to let user click to change around the slides -->
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer w3-include-html="footer.html"></footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize the current index to 1 and show the corresponding text
+            let currentIndex = 1;
+            showText(currentIndex);
+    
+            function showText(index) {
+                // Select all elements with the class "slider-bottom-text"
+                const texts = document.querySelectorAll(".slider-bottom-text");
+                // Iterate through each text element
+                texts.forEach((text) => {
+                    text.style.display = +text.getAttribute("data-index") === index ? "block" : "none"; // if match display else hide
+                });
+            }
+    
+            window.currentSlide = function (index) {
+                currentIndex = index; //Display the appropriate text
+                showText(currentIndex);
+            };
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <script src="js/w3-include-HTML.js"></script> 
+    <script>
+      includeHTML();
+    </script>
+    
+    
+</body>
+</html>

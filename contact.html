@@ -4,12 +4,114 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Document</title>
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="icon" href="images/tshirt.png" type="image/png">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    
   </head>
   <body>
     <header w3-include-html="header.html"></header>
+
+    <div class="container mt-5" style="margin-bottom:40px;">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <h2 class="text-center">Contact Us!</h2>
+              <p class="text-center">Got Questions? We are here to Help!</p>
+  
+              <form id="contactForm" onsubmit="submitForm(event)">
+                  <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                  </div>
+  
+                  <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                  </div>
+  
+                  <div class="form-group">
+                      <label for="message">Message:</label>
+                      <textarea class="form-control" id="message" rows="3" placeholder="Enter your message" required></textarea>
+                  </div>
+  
+                  <button type="submit" class="btn btn-dark btn-block">Submit</button>
+              </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="lottie">
+      <div style="display: none;" id="lottieContainer"> 
+        <dotlottie-player src="https://lottie.host/b1b50a52-ba8f-429a-9ac9-853a4046c501/4F354MVXzo.json" background="transparent" speed="0.5" style="width: 100px; height: 100px" direction="1" mode="normal" loop autoplay></dotlottie-player>
+      </div>
+    </div>
+
+    <div style="margin-top:60px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.3969930072637!2d103.78839164320159!3d1.29834833688653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a45642254c5%3A0x49c31d8c519133ec!2s6%20Fusionopolis%20Wy%2C%20Singapore%20138636!5e0!3m2!1sen!2ssg!4v1705596600692!5m2!1sen!2ssg" width="1530" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="container mt-5" style="margin-bottom: 60px;">
+      <div class="row">
+          <!-- Image Box on the Left -->
+          <div class="col-md-6">
+              <img src="images/modern-office-space-with-desktops-with-modern-computers-created-with-generative-ai-technology.jpg" alt="Office Image" class="img-fluid">
+          </div>
+  
+          <!-- Text on the Right -->
+          <div class="col-md-6" style="margin-top:120px;">
+              <h3>Office</h3>
+              <p style="font-size:18px"><strong>Location:</strong> Singapore</p>
+              <p style="font-size:18px"><strong>Address:</strong> 6 Fusionopolis Wy, Singapore 138636</p>
+              <p style="font-size:18px"><strong>Phone:</strong> +8668 7111</p>
+          </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+    <script>
+      function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+        };
+
+        // Simulate form submission by logging data to console
+        console.log("Form data submitted:", formData);
+
+        // In a real scenario, you would send the formData to your server using AJAX or other methods
+        // and handle the server response accordingly
+
+        // For now, let's assume the form is always submitted successfully
+        var isFormSubmittedSuccessfully = true;
+
+        // Show/hide Lottie animation based on the success of form submission
+        var lottieContainer = document.getElementById("lottieContainer");
+
+        if (isFormSubmittedSuccessfully) {
+          lottieContainer.style.display = "block";
+        } else {
+          lottieContainer.style.display = "none";
+        }
+      }
+
+      // Function to simulate form submission (replace it with your actual logic)
+      function submitToServer() {
+        // Simulate a successful submission for demonstration purposes
+        // Replace this with your actual form submission logic
+        return true;
+      }
+    </script>
+
 
     <footer w3-include-html="footer.html"></footer>
     <script src="js/w3-include-HTML.js"></script> 
