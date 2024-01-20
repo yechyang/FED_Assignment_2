@@ -31,6 +31,7 @@ header {
     max-width: 30px;
     margin-left: 10px;
     margin-right:20px;
+    cursor: pointer;
 }
 
 nav {
@@ -52,3 +53,8 @@ nav a:hover {
     color: gray; 
 }
 
+.market-span {
+    /* Add your styling here */
+    color: black; /* Example color */
+    margin-left: 0px; /* Example margin */
+}
