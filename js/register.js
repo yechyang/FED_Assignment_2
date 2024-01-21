@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // What kind of interface we want at the start 
     const APIKEY = "65abe6488efa9b5bc035743a";
+    getContacts();
+    document.getElementById("add-update-msg").style.display = "none";
   
     //[STEP 1]: Create our submit form listener
     document.getElementById("register-submit").addEventListener("click", function (e) {
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(function () {
             document.getElementById("add-update-msg").style.display = "none";
           }, 3000);
+          getContacts();
         });
     });
 });
