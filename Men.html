@@ -9,6 +9,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/normalize.css">
     <script src="js/w3-include-HTML.js"></script>
   </head>
@@ -29,7 +30,7 @@
         <!-- First Row -->
         <div class="col-md-4 custom-image-container">
           <h5 style="color:rgb(0, 0, 0); text-align: center;">T-Shirt</h5>
-          <img src="clothing-image/T-Shirt-Category.png" class="img-fluid" alt="Image 1">
+          <a href="shirt.html"><img src="clothing-image/T-Shirt-Category.png" class="img-fluid" alt="Image 1"></a>
         </div>
         <div class="col-md-4 custom-image-container">
           <h5 style="color:rgb(0, 0, 0); text-align: center;">Shirt</h5>
@@ -37,13 +38,13 @@
         </div>
         <div class="col-md-4 custom-image-container">
           <h5 style="color:rgb(0, 0, 0); text-align: center;">Pants</h5>
-          <img src="clothing-image/pants.png" class="img-fluid" alt="Image 3">
+          <a href="productHTML/pants.html"><img src="clothing-image/pants.png" class="img-fluid" alt="Image 3"></a>
         </div>
     
         <!-- Second Row -->
         <div class="col-md-4 custom-image-container">
           <h5 style="color:rgb(0, 0, 0); text-align: center;">Sweater</h5>
-          <img src="clothing-image/sweater.jpg" class="img-fluid" alt="Image 4">
+          <a href="sweater.html"><img src="clothing-image/sweater.jpg" class="img-fluid" alt="Image 4"></a>
         </div>
         <div class="col-md-4 custom-image-container">
           <h5 style="color:rgb(0, 0, 0); text-align: center;">Shorts</h5>
@@ -116,11 +117,42 @@
       </div>
     </section>
 
+    <div class="custom-container">
+      <div class="cartTab" style="display: none;">
+        <div class="Header">
+          <h3 class="Heading">Shopping Cart</h3>
+          <h5 class="Action">Remove all</h5>
+        </div>
+        <button class="cart-button">Pay Now</button>
+      </div>
+    </div>
+
 
 
     <footer w3-include-html="footer.html"></footer>
     <script>
-      includeHTML();
+      document.addEventListener('DOMContentLoaded', function () {
+        includeHTML(function () {
+          var cartTab = document.querySelector('.cartTab');
+          var marketIcon = document.getElementById('marketIcon');
+    
+          if (cartTab && marketIcon) {
+            marketIcon.addEventListener('click', function () {
+              cartTab.style.display = (cartTab.style.display === 'none') ? 'block' : 'none';
+            });
+    
+            var closeBtn = cartTab.querySelector('.close');
+    
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function () {
+                cartTab.style.display = 'none';
+              });
+            }
+    
+            addImageClickListeners(); // Attach event listeners to all images
+          }
+        });
+      });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
