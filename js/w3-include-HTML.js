@@ -1,4 +1,4 @@
-/*includeHTML();
+includeHTML();
 function includeHTML() {
   var z, i, a, file, xhttp;
   z = document.getElementsByTagName("*");
@@ -20,11 +20,11 @@ function includeHTML() {
       return;
     }
   }
-}*/
+}
 
 
 
-function includeHTML(callback) {
+/*function includeHTML(callback) {
   var elements = document.querySelectorAll('[w3-include-html]');
   var remaining = elements.length;
 
@@ -173,8 +173,4 @@ function updateMarketSpan(change) {
   marketSpan.textContent = (currentQuantity + change).toString();
 
   sessionStorage.setItem('marketSpan', marketSpan.textContent);
-}
-
-
-
-
+}*/
