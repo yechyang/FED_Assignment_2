@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (var i = 0; i < response.length && i < limit; i++) {
           let item = response[i];
-          let imagePath = '/FED_Assignment_2/clothing-image/' + encodeURIComponent(item.Product) + '.png';
+          let imagePath = '/FED_Assignment_2/images/' + encodeURIComponent(item.Product) + '.png';
           console.log(imagePath);
 
           content += `<div class="col-md-4">
