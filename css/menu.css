@@ -150,7 +150,7 @@
 
 .custom-image-container {
     position: relative;
-    padding-bottom: 40%; /* Adjust the padding to change the aspect ratio (e.g., 75% for a 4:3 ratio) */
+    padding-bottom: 30%; /* Adjust the padding to change the aspect ratio (e.g., 75% for a 4:3 ratio) */
     overflow: hidden;
     margin-bottom:20px;
   }
@@ -170,7 +170,7 @@
 
 .custom-image-container-third {
     position: relative;
-    padding-bottom: 20%; /* Adjust the padding to change the aspect ratio (e.g., 75% for a 4:3 ratio) */
+    padding-bottom: 10%; /* Adjust the padding to change the aspect ratio (e.g., 75% for a 4:3 ratio) */
     margin-bottom:20px;
 }
 

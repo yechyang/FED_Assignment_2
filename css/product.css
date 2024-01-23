@@ -141,3 +141,13 @@
     color:whitesmoke;
     border-radius:20px;
   }
+
+
+#total-price{
+  position:fixed;
+  bottom:13.5%;
+  left: 51.3%;
+  font-size:20px;
+}
+
+

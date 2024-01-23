@@ -15,51 +15,23 @@
 
     <div class="dropdown">
       <div class="container">
-        <div class="row">
-          <div class="col">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
             <div class="form-group">
-              <label for="dropdown1">Sizes</label>
+              <label for="dropdown1">Products</label>
               <select class="form-select custom-dropdown" id="dropdown1">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="dropdown2">Sort</label>
-              <select class="form-select custom-dropdown" id="dropdown2">
-                <option value="Newest">Newest</option>
-                <option value="Oldest">Oldest</option>
-                <option value="Highest">Highest Price</option>
-                <option value="Lowest">Lowest Price</option>
-              </select>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="dropdown3">Colors</label>
-              <select class="form-select custom-dropdown" id="dropdown3">
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-              </select>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="dropdown4">Price</label>
-              <select class="form-select custom-dropdown" id="dropdown4">
-                
+                <option value="All">All</option>
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Pants">Pants</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Shirt">Shirt</option>
+                <option value="Sweater">Sweater</option>
               </select>
             </div>
           </div>
         </div>
       </div>
     </div>
-
 
     <div class="box-container container">
       <div class="row">
@@ -132,9 +104,10 @@
       <div class="cartTab" style="display: none;">
         <div class="Header">
           <h3 class="Heading">Shopping Cart</h3>
-          <h5 class="Action">Remove all</h5>
+          <h5 class="Action" id="remove-all">Remove all</h5>
         </div>
         <ul class="shopping-cart-list"></ul>
+        <p id="total-price">Total Price: $0.00</p>
         <button class="cart-button">Pay Now</button>
       </div>
     </div>
@@ -144,84 +117,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/w3-include-HTML.js"></script> 
   <script src="js/product-api.js"></script>
-  <script>
-    window.addEventListener('load', function () {
-      var marketIcon = document.getElementById('market-icon');
-      var cartTab = document.querySelector('.cartTab');
-      var boxContainer = document.querySelector('.box-container'); // Adjust to your actual container class
-      var shoppingCartList = document.querySelector('.shopping-cart-list');
-  
-      if (marketIcon) {
-        marketIcon.addEventListener('click', function () {
-          if (cartTab.style.display === 'none' || cartTab.style.display === '') {
-            cartTab.style.display = 'block';
-          } else {
-            cartTab.style.display = 'none';
-          }
-        });
-      }
-  
-      // Delegate click event handling to the parent container
-      boxContainer.addEventListener('click', function (event) {
-        var clickedBox = event.target.closest('.box');
-  
-        if (clickedBox) {
-          // Get product details from the clicked box
-          var productImage = clickedBox.querySelector('img').getAttribute('src');
-          
-          var productNameElement = clickedBox.querySelector('p:nth-child(2)');
-          var firstProductText = productNameElement ? productNameElement.textContent.trim() : '';
-          
-          var productPriceElement = clickedBox.querySelector('p:nth-child(3)');
-          var secondProductText = productPriceElement ? productPriceElement.textContent.trim() : '';
-  
-          // You can now use the product details to add it to the shopping cart
-          addToCart(productImage, firstProductText, secondProductText);
-        }
-      });
-  
-      function addToCart(image, text, secondText) {
-        var listItem = document.createElement('li');
-  
-        // Create a container for the image and text
-        var contentContainer = document.createElement('div');
-        contentContainer.classList.add('content-container');
-  
-        // Create an image element
-        var imageElement = document.createElement('img');
-        imageElement.src = image;
-        imageElement.alt = 'Product Image';
-  
-        // Create a paragraph element for the first paragraph
-        var textElement = document.createElement('p');
-        textElement.textContent = text;
-  
-        // Create a paragraph element for the second paragraph
-        var secondTextElement = document.createElement('p');
-        secondTextElement.textContent = secondText;
-  
-        // Append the image and text to the content container
-        contentContainer.appendChild(imageElement);
-        contentContainer.appendChild(textElement);
-        contentContainer.appendChild(secondTextElement);
-  
-        // Append the content container to the list item
-        listItem.appendChild(contentContainer);
-  
-        // Append the new list item to the shopping cart list
-        if (shoppingCartList) {
-          shoppingCartList.appendChild(listItem);
-  
-          // Log to console for verification (you can remove this line in the final version)
-          console.log('Product added to cart:', { image, text, secondText });
-        } else {
-          console.error('Shopping cart list not found.');
-        }
-      }
-    });
-  </script>
-  
-  
+  <script src="js/cart.js"></script>
+  <script src="js/filter.js"></script>
 
 </body>
 </html>
