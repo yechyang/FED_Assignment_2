@@ -1,0 +1,97 @@
+#register{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    color:whitesmoke;
+}
+#add-update-msg {
+    position: absolute;
+    top: 210px !important; /* Adjust the distance above the form */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%; /* Make it span the full width of the form */
+    text-align: center; /* Center the text within the message */
+}
+
+#register form {
+    background-color: rgba(62, 62, 62, 0.3);
+    width: 550px;
+    border-radius: 25px;
+    position: relative; /* Add relative positioning to the form */
+}
+#register h3{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+}
+
+#register input{
+    display:block;
+    width: 350px;
+    margin: 0 auto; /* Center the input horizontally */
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+#register label {
+    margin-left: 100px;
+}
+
+#register legend{
+    margin-left: 103px;
+    font-size: 16px;
+    margin-bottom:30px;
+}
+
+#register .gender {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    max-width: 350px;
+    margin: 0 55px;
+    box-sizing: border-box;
+    align-items: center; /* Center items vertically */
+}
+
+#register .gender input[type="radio"] {
+    width: 20px; 
+    height: 20px;
+    margin-right: 10px;
+}
+
+#register .gender label {
+    align-items: baseline; /* Align labels based on baseline */
+    margin-top:10px;
+}
+
+#register #register-button{
+    display: flex;
+    justify-content: center;
+}
+
+#register button{
+    background-color: black;
+    color: white;
+    width: 130px;
+    height: 35px;
+    font-size: 20px !important;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+.register-background{
+    background-image: url('/FED_Assignment_2/images/black-white-minimal-portrait.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    display:block;
+    z-index: -1;
+}
+#add-update-msg {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+}

@@ -2,13 +2,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // What kind of interface we want at the start 
     const APIKEY = "65abe6488efa9b5bc035743a";
+    document.getElementById("add-update-msg").style.display = "none";
 
-    
     //[STEP 1]: Create our submit form listener
     document.getElementById("register-submit").addEventListener("click", function (e) {
       // Prevent default action of the button 
       e.preventDefault();
-  
+      
       //[STEP 2]: Let's retrieve form data
       // For now, we assume all information is valid
       // You are to do your own data validation
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
           //@TODO use loading bar instead
           // Disable our button or show loading bar
           document.getElementById("register-submit").disabled = true;
-          // Clear our form using the form ID and triggering its reset feature
-          document.getElementById("add-contact-form").reset();
+
+
         }
       }
   
@@ -59,5 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 3000);
 
         });
+        
+        // Clear our form using the form ID and triggering its reset feature
+        document.getElementById("add-contact-form").reset();
     });
 });
