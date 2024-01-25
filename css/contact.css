@@ -14,8 +14,9 @@ textarea.form-control{
 }
 
 .lottie {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+}
 
+.lottie dotlottie-player {
+    display: inline-block;
 }

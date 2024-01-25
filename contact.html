@@ -21,7 +21,7 @@
               <h2 class="text-center">Contact Us!</h2>
               <p class="text-center">Got Questions? We are here to Help!</p>
   
-              <form id="contactForm" onsubmit="submitForm(event)">
+              <form id="contactForm"> 
                   <div class="form-group">
                       <label for="name">Name:</label>
                       <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
@@ -37,16 +37,14 @@
                       <textarea class="form-control" id="message" rows="3" placeholder="Enter your message" required></textarea>
                   </div>
   
-                  <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                  <button type="submit" class="btn btn-dark btn-block" onclick="contactform(event)">Submit</button>
               </form>
             </div>
         </div>
     </div>
     
-    <div class="lottie">
-      <div style="display: none;" id="lottieContainer"> 
-        <dotlottie-player src="https://lottie.host/b1b50a52-ba8f-429a-9ac9-853a4046c501/4F354MVXzo.json" background="transparent" speed="0.5" style="width: 100px; height: 100px" direction="1" mode="normal" loop autoplay></dotlottie-player>
-      </div>
+    <div class="lottie" id="lottieContainer" style="display: none;">
+        <dotlottie-player src="https://lottie.host/b1b50a52-ba8f-429a-9ac9-853a4046c501/4F354MVXzo.json" background="transparent" speed="1" style="width: 100px; height: 100px" direction="1" mode="normal" loop autoplay></dotlottie-player>
     </div>
 
     <div style="margin-top:60px">
@@ -70,50 +68,13 @@
       </div>
     </div>
 
+    <footer w3-include-html="footer.html"></footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  
-    <script>
-      function submitForm(event) {
-        event.preventDefault(); // Prevent the default form submission
+    <script src="js/contact.js"></script>
 
-        var formData = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          message: document.getElementById("message").value
-        };
-
-        // Simulate form submission by logging data to console
-        console.log("Form data submitted:", formData);
-
-        // In a real scenario, you would send the formData to your server using AJAX or other methods
-        // and handle the server response accordingly
-
-        // For now, let's assume the form is always submitted successfully
-        var isFormSubmittedSuccessfully = true;
-
-        // Show/hide Lottie animation based on the success of form submission
-        var lottieContainer = document.getElementById("lottieContainer");
-
-        if (isFormSubmittedSuccessfully) {
-          lottieContainer.style.display = "block";
-        } else {
-          lottieContainer.style.display = "none";
-        }
-      }
-
-      // Function to simulate form submission (replace it with your actual logic)
-      function submitToServer() {
-        // Simulate a successful submission for demonstration purposes
-        // Replace this with your actual form submission logic
-        return true;
-      }
-    </script>
-
-
-    <footer w3-include-html="footer.html"></footer>
     <script src="js/w3-include-HTML.js"></script> 
     <script>
       includeHTML();
