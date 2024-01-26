@@ -82,7 +82,7 @@ video {
         transform: translateX(-100%);
     }
     100% {
-        transform: translateX(28%);
+        transform: translateX(33%);
     }
 }
 

@@ -166,10 +166,9 @@ body{
 
 
 .background-responsive-img{
-    background-image: url('/FED_Assignment_2/images/homemiddle.jpg');
+    background-image: url('/FED_Assignment_2/images/abstract-smooth-brown-wall-background-layout-designstudioroomweb-templatebusiness-report-with-smooth.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-color: transparent;
     margin: 0;
     margin-top:100px;
@@ -204,7 +203,7 @@ body{
 /* Text inside background image */
 .text_above_button{
     text-align:center;
-    color: rgb(50, 50, 50);
+    color: black;
     position: absolute;
     top:22%;
     left: 50%;

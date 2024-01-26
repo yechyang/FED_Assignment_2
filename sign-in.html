@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign-in</title>
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/sign-in.css">
+    <link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body class="signin-background">
     <header><div w3-include-HTML="header.html"></div></header>
 
     <section id="login-form">
-        <form>
+        <form id="login">
             <h2 id="login-title">Login</h2>
 
             <div id="identification">
-                <input type="text" placeholder="Username/ Email" id="Username" required>
+                <input type="text" placeholder="Username/ Email" id="username" required>
                 <input type="password" placeholder="Password" id="password" required>
             </div>
 
@@ -35,10 +35,9 @@
             </div>
         </form>
     </section>
-    <script>
-        includeHTML();
-    </script>
+    
     <script src="js/w3-include-HTML.js"></script>
+    <script src="js/login.js"></script>
 
 </body>
 </html>

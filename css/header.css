@@ -58,3 +58,8 @@ nav a:hover {
     color: black; /* Example color */
     margin-left: 0px; /* Example margin */
 }
+
+.black-text {
+    color: black;
+    font-size:20px;
+}
