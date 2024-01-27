@@ -39,8 +39,9 @@ header {
 nav {
     display: flex;
     justify-content: center;
+    text-align: center;
     background-color: #9f9a94; 
-    padding: 2px;
+    padding: 10px;
 }
 nav a {
     color: #fff;

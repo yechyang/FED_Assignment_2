@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         document.querySelector(".box-container .row").innerHTML = content;
+        document.getElementById("loading-animation").style.display = "none"; // Hide the loading animation
+        document.querySelector(".box-container").style.display = "block"; // Show the product boxes
       });
   };
 });

@@ -130,33 +130,12 @@
 
 
     <footer w3-include-html="footer.html"></footer>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        includeHTML(function () {
-          var cartTab = document.querySelector('.cartTab');
-          var marketIcon = document.getElementById('marketIcon');
-    
-          if (cartTab && marketIcon) {
-            marketIcon.addEventListener('click', function () {
-              cartTab.style.display = (cartTab.style.display === 'none') ? 'block' : 'none';
-            });
-    
-            var closeBtn = cartTab.querySelector('.close');
-    
-            if (closeBtn) {
-              closeBtn.addEventListener('click', function () {
-                cartTab.style.display = 'none';
-              });
-            }
-    
-            addImageClickListeners(); // Attach event listeners to all images
-          }
-        });
-      });
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      includeHTML();
+    </script>  
     <script src="js/login.js"></script>
   </body>
 </html>

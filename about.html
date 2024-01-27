@@ -6,13 +6,31 @@
     <title>LYC Bakery</title>
     <link rel="icon" href="images/tshirt.png" type="image/png">
     <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/alternate-header.css">
     <link rel="stylesheet" href="css/normalize.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
-    <header w3-include-html="header.html"></header>
+
+    <header>
+        <img src="/FED_Assignment_2/images/tshirt.png" alt="Logo" class="logo">
+        <div class="logo-container">
+          <div id="user-account-container">
+            <a href="sign-in.html"><img src="/FED_Assignment_2/images/user.png" alt="Logo 1" class="additional-logo"></a>
+          </div>
+          <img src="/FED_Assignment_2/images/market.png" alt="Logo 2" class="additional-logo" id="market-icon" style="margin-right:10px;">
+          <span class="market-span" id="cart-quantity">0</span>
+        </div>
+    </header>
+  
+    <nav>
+        <a href="/FED_Assignment_2/index.html">Home</a>
+        <a href="/FED_Assignment_2/Men.html">Men</a>
+        <a href="/FED_Assignment_2/Women.html">Women</a>
+        <a href="/FED_Assignment_2/about.html">About</a>
+        <a href="/FED_Assignment_2/contact.html">Contact</a>
+    </nav>
 
     <div class="image-container">
         <img class="about-image" src="images/grayscale-shot-male-walking-along-pedestrian-zone-near-building.jpg" alt="">
@@ -98,6 +116,11 @@
 
 
     <footer w3-include-html="footer.html"></footer>
+    <script src="js/w3-include-HTML.js"></script>   
+    <script>
+        includeHTML();
+    </script>  
+    <script src="js/login.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize the current index to 1 and show the corresponding text
@@ -122,8 +145,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="js/login.js"></script>
-    <script src="js/w3-include-HTML.js"></script>     
     
 </body>
 </html>
