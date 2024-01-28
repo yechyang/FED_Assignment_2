@@ -7,6 +7,7 @@
     <link rel="icon" href="images/tshirt.png" type="image/png">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/alternate-header.css">
+    <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/normalize.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
@@ -113,7 +114,17 @@
         </div>
     </section>
 
-
+    <div class="custom-container">
+        <div class="cartTab" style="display: none;">
+          <div class="Header">
+            <h3 class="Heading">Shopping Cart</h3>
+            <h5 class="Action" id="remove-all">Remove all</h5>
+          </div>
+          <ul class="shopping-cart-list"></ul>
+          <p id="total-price">Total Price: $0.00</p>
+          <button class="cart-button">Pay Now</button>
+        </div>
+      </div>
 
     <footer w3-include-html="footer.html"></footer>
     <script src="js/w3-include-HTML.js"></script>   
@@ -121,6 +132,7 @@
         includeHTML();
     </script>  
     <script src="js/login.js"></script>
+    <script src="js/cart.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize the current index to 1 and show the corresponding text
