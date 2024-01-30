@@ -111,3 +111,6 @@ video {
     background-color: #717171;
 }
 
+.container img:hover{
+    transform: scale(1.05);
+}

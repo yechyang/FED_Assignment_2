@@ -20,9 +20,9 @@ body{
     background-color: rgba(0, 0, 0, 0); 
     padding: 10px;
     position: absolute;
-    width: 41%;
+    width: 44%;
     top: 1.5%;
-    left: 29%;
+    left: 28%;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -274,7 +274,7 @@ body{
     top: 50%;
     transform: translateY(-50%);
     font-size: 70px;
-    color:rgb(224, 224, 224);
+    color:black;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0); 
     padding: 20% 5%; 
@@ -296,4 +296,155 @@ body{
     margin-top:20px;
     margin-left:20px;
     margin-right:20px;
+}
+
+
+@media screen and (max-width: 500px){
+    .image-container {
+        position: relative;
+        height: 87vh; /* Reduced height for smaller screens */
+        overflow: hidden;
+    }
+
+    .Home-image {
+        width: 100%;
+        height: 680px; /* Adjusted for smaller screens */
+        object-fit: cover;
+    }
+
+    .navbar {
+        width: 25%;
+        left: 40%;
+    }
+    
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0px;
+        display: block;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .logo-container {
+        right: 2%;
+    }
+    
+    .logo {
+        width: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+
+    .branding {
+        font-size: 28px; /* Reduced font size for smaller screens */
+    }
+
+    .buttons-container {
+        position: absolute;
+        bottom: 20%;
+        left: 53%;
+        transform: translateX(-50%);
+        width:300px;
+    }
+
+    .button,
+    .button2
+    {
+        margin: 0px;
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .box-button {
+        margin: 10px 0px; 
+        padding: 10px 35px;
+        font-size: 16px;
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 10px; /* Reduced margin for smaller screens */
+    }
+
+    .box-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 0px; /* Reduced margin for smaller screens */
+        flex-direction: column; /* Changed direction for smaller screens */
+        height: 1200px; /* Adjusted height for smaller screens */
+    }
+
+    .box {
+        width: 80%;
+        height:350px;
+        margin: 10px auto; /* Centered and adjusted margin for smaller screens */
+    }
+
+    .box-image {
+        height: 100%; /* Adjusted height for smaller screens */
+    }
+
+    .box h2 {
+        font-size: 20px; /* Reduced font size for smaller screens */
+    }
+
+    .background-responsive-img{
+        margin-top:20px;
+        margin-bottom:20px;
+        height:110vh;
+    }
+
+    .background-responsive-img button{
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-top:15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+        top: 83%;
+    }
+    
+    /* Text inside background image */
+    .text_above_button{
+        text-align:center;
+        color: black;
+        position: absolute;
+        top:14%;
+        left: 50%;
+        transform: translate(-50%);
+        font-weight:700;
+    }
+
+    #slider-container {
+        margin-top:10px;
+        height:800px;
+    }
+
+    #image-slider{
+        height:800px;
+    }
+
+    .slide-content {
+        top: 50%;
+        color: #fff;
+    }
+    
+    .slide-content h3 {
+        font-size: 34px;
+        margin-bottom: 0px;
+    }
+    
+    .slide-button {
+        padding: 10px 32px;
+        margin-top:15px;
+        font-size: 20px;
+    }
+    #prev, #next {
+        font-size: 50px;
+        color:black;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0); 
+    }
 }
