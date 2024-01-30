@@ -48,7 +48,7 @@
 
 .men-video-background {
     position: relative;
-    margin-top:350px;
+    margin-top:150px;
     height: 90vh;
     overflow: hidden; /* Hide overflowing content */
 }
@@ -146,6 +146,24 @@
 }
 
 
+.scrollable-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    width:1350px;
+}
+  
+.box {
+    display: inline-block;
+    width: 300px;
+    margin-right: 50px; 
+    text-align: center;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 .custom-image-container {

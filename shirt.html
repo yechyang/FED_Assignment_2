@@ -11,14 +11,16 @@
 <body>
   <header w3-include-html="header.html"></header>
 
-    <img class="top-left-image" src="images/close.png" alt="X Image">
+    <div class="background">
+      <h1 style="color:black; font-weight: 700;font-size:40px;">Be Stylish</h1>
+    </div>
 
-    <div class="dropdown">
+    <div class="dropdown dropdown-container">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-4">
             <div class="form-group">
-              <label for="dropdown1">Products</label>
+              <label for="dropdown1" style="color:black;font-size:20px;">Products</label>
               <select class="form-select custom-dropdown" id="dropdown1">
                 <option value="All">All</option>
                 <option value="T-Shirt">T-Shirt</option>
@@ -29,9 +31,28 @@
               </select>
             </div>
           </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="priceRange" style="color:black;font-size:20px;">Price:</label>
+              <input type="range" class="form-range custom-range" id="priceRange" min="1" max="100" step="1" value="1">
+              <span>$<span id="priceValue">1</span> - $<span id="maxPrice">100</span></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+          <div class="search" style="margin-bottom:30px;">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search for product.....">
+            <button class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </div>
+  </div>
 
     <div class="loading-container">
       <dotlottie-player id="loading-animation" src="https://lottie.host/29a26a41-613f-4289-b15b-4ba4f1f822b0/60c8R6v7CP.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
