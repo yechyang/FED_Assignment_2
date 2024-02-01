@@ -400,6 +400,10 @@ window.addEventListener('load', function () {
           secondText: secondText
         });
         sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        var totalPriceInStorage = parseFloat(sessionStorage.getItem('totalPrice')) || 0;
+        totalPriceInStorage += productPrice;
+        sessionStorage.setItem('totalPrice', totalPriceInStorage.toFixed(2));
       }
 
       sendCartDataToServer(listItem, cartQuantity);
