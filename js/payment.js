@@ -1,3 +1,5 @@
+const APIKEY = "65afdc5f482ae93fcb54da42";
+
 // Get a reference to the cart items container
 var cartItemsContainer = document.getElementById('cart-items-container');
 
@@ -51,3 +53,58 @@ function renderCartItem(item) {
     // Append the box div to the cart items container
     cartItemsContainer.appendChild(boxDiv);
 }
+
+
+
+function updatepoint(form) {
+    form.preventDefault();
+
+    // Retrieve user account information from sessionStorage
+    var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
+
+    if (!userAccount) {
+        console.error('User account not found in sessionStorage.');
+        return;
+    }
+
+    // Calculate points earned based on the total price
+    let totalPrice = parseFloat(sessionStorage.getItem('totalPrice')) || 0;
+    let pointsEarned = Math.floor(totalPrice / 1);
+
+    // Update user account object with new points
+    userAccount.point += pointsEarned;
+
+    let settings = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache"
+        },
+        body: JSON.stringify(userAccount) // Send the updated user account object in the body
+    }
+
+    // Send PUT request to update user account
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Points updated successfully:", data);
+        })
+        .catch(error => {
+            console.error("Error updating points:", error);
+        });
+}//end updateform function
+
+
+var paymentForm = document.querySelector('form');
+
+// Add an event listener for the form submission event
+paymentForm.addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    
+    // Call the updatepoint function
+    updatepoint(event);
+
+    paymentForm.reset();
+});
