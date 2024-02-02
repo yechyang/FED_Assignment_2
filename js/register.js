@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "email": AccEmail,
         "password": AccPassword,
         "address": AccAddress,
+        "point": 0,
       };
   
       //[STEP 4]: Create our AJAX settings. Take note of API key
