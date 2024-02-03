@@ -32,7 +32,7 @@
 
 .box img {
   max-width: 100%;
-  height: 400px;
+  height: 200px;
 }
 
 .hidden {
@@ -246,3 +246,21 @@
    background: blue;
 
   }
+
+
+  
+.box1 img {
+  max-width: 100%;
+  height: 400px;
+}
+
+.redeem-background {
+  display: flex;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/FED_Assignment_2/images/beautiful-gift-voucher-with-decoration.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom:40px;
+}
