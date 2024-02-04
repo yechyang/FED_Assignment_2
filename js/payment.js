@@ -74,6 +74,8 @@ function updatepoint(form) {
     // Update user account object with new points
     userAccount.point += pointsEarned;
 
+    sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+
     let settings = {
         method: "PUT",
         headers: {
