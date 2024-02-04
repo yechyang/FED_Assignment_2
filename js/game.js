@@ -29,3 +29,45 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("No user account found in sessionStorage or username missing.");
     }
 });
+
+
+function sendMessage() {
+    var userInput = document.getElementById("user-input").value;
+    var chatBox = document.getElementById("chat-box");
+
+    // Display user message
+    var userMessage = document.createElement("div");
+    userMessage.classList.add("user-message");
+    userMessage.textContent = userInput;
+    chatBox.appendChild(userMessage);
+
+    // Check user input and respond accordingly
+    var botMessage = document.createElement("div");
+    botMessage.classList.add("bot-message");
+
+    switch(userInput.toLowerCase()) {
+        case "hangsnowman":
+            botMessage.textContent = "Let's play Hangman!";
+            setTimeout(function() {
+                window.location.href = "/FED_Assignment_2/hangman.html";
+            }, 2000);
+            break;
+        case "spinthewheel":
+            botMessage.textContent = "Let's play Spin the Wheel!";
+            break;
+        case "clicker":
+            botMessage.textContent = "Let's play Clicker!";
+            break;
+        default:
+            botMessage.textContent = "I didn't understand that. Please choose from hangsnowman, spinthewheel, or clicker.";
+            break;
+    }
+
+    chatBox.appendChild(botMessage);
+
+    // Scroll chat box to bottom
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Clear user input field
+    document.getElementById("user-input").value = "";
+}

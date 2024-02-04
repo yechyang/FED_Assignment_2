@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/alternate-header.css">
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/product.css">
@@ -56,11 +57,11 @@
     </div>
 
     <div style="margin-top:50px;">
-        <h1 style="text-align:center">List of Games</h1>
+        <h1 style="text-align:center;color:black;">List of Games</h1>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <img src="images/businessmen-businesswomen-meeting-brainstorming-ideas.jpg" alt="Image 1" class="img-fluid">
+                    <a href="hangman.html"><img src="images/businessmen-businesswomen-meeting-brainstorming-ideas.jpg" alt="Image 1" class="img-fluid"></a>
                 </div>
                 <div class="col-md-6 mb-4">
                     <img src="images/top-view-cloths-made-with-different-natural-pigments-with-copy-space.png" alt="Image 2" class="img-fluid">
@@ -77,6 +78,15 @@
         </div>
     </div>
 
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message">Welcome to the Game Bot!</div>
+            <div class="bot-message">Enter down the games you want. (HangSnowman)</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
     <div class="game2-responsive-img">
         <p id="userPointsDisplay">Retrieving... </p>
         <div class="text_above_button">
@@ -87,10 +97,63 @@
         </form>
     </div>
 
-
-    <footer w3-include-html="footer.html"></footer>
+    <footer class="bg-dark text-light text-center py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 style="margin-top:60px;">Subscribe</h5>
+                    <form class="subscribe-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <button type="submit" class="btn btn-light" style="margin-top:10px">Subscribe</button>
+                    </form>
+                    
+                    <div class="social-media-icons">
+                        <a href="#" target="_blank" class="social-icon"><img src="/FED_Assignment_2/images/facebook.png" alt="Facebook" class="img-fluid"></a>
     
-    <script src="js/w3-include-HTML.js"></script>
+                        <a href="#" target="_blank" class="social-icon"><img src="/FED_Assignment_2/images/twitter.png" alt="Twitter" class="img-fluid"></a>
+                        
+                        <a href="#" target="_blank" class="social-icon"><img src="/FED_Assignment_2/images/instagram.png" alt="Instagram" class="img-fluid"></a>
+                    </div>
+                </div>
+    
+                <!-- Right Columns: About Us, Featured, Support -->
+                <div class="col-md-8">
+                    <div class="row">
+                        <!-- Column 1: About Us -->
+                        <div class="col-md-4">
+                            <h5 style="margin-top:60px;margin-bottom: 20px;font-weight:700">About Us</h5>
+                            <p>Contact Us</p>
+                            <p>Information</p>
+                            <p>Accounts</p>
+                        </div>
+    
+                        <!-- Column 2: Featured -->
+                        <div class="col-md-4">
+                            <h5 style="margin-top:60px;margin-bottom: 20px; font-weight:700">Featured & Account</h5>
+                            <p>Promotions</p>
+                            <p>Campaign</p>
+                            <a href="payment.html"><p>Payment</p></a>
+                        </div>
+    
+                        <!-- Column 3: Support -->
+                        <div class="col-md-4">
+                            <h5 style="margin-top:60px;margin-bottom: 20px;font-weight:700">Support</h5>
+                            <p>FAQ</p>
+                            <p>Return Policy</p>
+                            <p>Privacy Policy</p>
+                            <p>Terms of use</p>
+                            <p>Accessibility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/opencart.js"></script>
     <script src="js/game.js"></script>

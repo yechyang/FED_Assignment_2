@@ -21,6 +21,7 @@
 .rules{
     text-align: center;
     margin-top:30px;
+    color:black;
 }
 
 .rules p{
@@ -90,4 +91,70 @@
     left: 50%;
     transform: translate(-50%);
     font-weight:700;
+}
+
+.social-icon img {
+    width: 30px; 
+    height: auto; 
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.chat-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.bot-message {
+    text-align:center;
+    background-color: rgb(53, 53, 53);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.user-message {
+    background-color: rgb(241, 253, 255);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color:black;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 460px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    width:460px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

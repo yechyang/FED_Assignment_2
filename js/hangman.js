@@ -1,3 +1,5 @@
+const APIKEY = "65afdc5f482ae93fcb54da42";
+
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("difficultyModal");
     modal.style.display = "block";
@@ -23,7 +25,7 @@ function startGame(difficulty) {
     if (difficulty === "easy") {
         maxGuesses = 6; // Set maxGuesses for easy difficulty
     } else if (difficulty === "hard") {
-        maxGuesses = 6; // Set maxGuesses for hard difficulty
+        maxGuesses = 5; // Set maxGuesses for hard difficulty
         startTimer(180);
     } 
     getRandomWord();
@@ -91,7 +93,47 @@ const ending = (isVictory) => {
     gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
+
+    let pointsEarned = 0;
+    if (isVictory) {
+        if (maxGuesses === 6) {
+            pointsEarned = 10;
+        } else {
+            pointsEarned = 20;
+        }
+    }
+
+    var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
+
+    if (!userAccount) {
+        console.error('User account not found in sessionStorage.');
+        return;
+    }
+
+    userAccount.point += pointsEarned;
+
+    sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+
+    let settings = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache"
+        },
+        body: JSON.stringify(userAccount) // Send the updated user account object in the body
+    }
+
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    .then(response => response.json())
+    .then(data => {
+        console.log("Points updated successfully:", data);
+    })
+    .catch(error => {
+        console.error("Error updating points:", error);
+    });
 }
+
 
 const initGame = (button, clickedLetter) => {
     // Checking if clickedLetter is exist on the currentWord
@@ -129,6 +171,3 @@ for (let i = 97; i <= 122; i++) {
 playAgainBtn.addEventListener("click", function() {
     location.reload();
 });
-
-
-
