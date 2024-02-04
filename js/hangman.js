@@ -20,6 +20,10 @@ hardBtn.addEventListener("click", function() {
 let timerInterval;
 
 function startGame(difficulty) {
+    if (!isUserLoggedIn()) {
+        alert("Please log in to play the game.");
+        return;
+    }
     // Reset the game with the selected difficulty
     // For example, you can set maxGuesses based on difficulty
     if (difficulty === "easy") {
@@ -171,3 +175,9 @@ for (let i = 97; i <= 122; i++) {
 playAgainBtn.addEventListener("click", function() {
     location.reload();
 });
+
+function isUserLoggedIn() {
+    // Check if the currentUserAccount exists in sessionStorage
+    var currentUserAccount = sessionStorage.getItem("userAccount");
+    return currentUserAccount !== null;
+  }

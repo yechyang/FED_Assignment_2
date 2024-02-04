@@ -28,6 +28,14 @@
     align-items: center;
 }
 
+.hint-text{
+    color:black;
+}
+
+.guesses-text{
+    color:black
+}
+
 
 .word-display {
     display: grid;
@@ -90,6 +98,7 @@
 
 .keyboard button {
     padding: 7px;
+    border-radius: 50%;
     width: calc(100% / 9 - 5px);
 }
 
@@ -126,6 +135,7 @@
 .game-modal .content {
     padding: 30px;
     max-width: 420px;
+    color:black;
     width: 100%;
     border-radius: 10px;
     background: #fff;
