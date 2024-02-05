@@ -1,0 +1,41 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.wheel {
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(
+        #ff5733 0 60deg, 
+        #ffc300 60deg 120deg, 
+        #ff5733 120deg 180deg, 
+        #ffc300 180deg 240deg, 
+        #ff5733 240deg 300deg, 
+        #ffc300 300deg 360deg
+    );
+    border-radius: 50%;
+    position: relative;
+}
+
+.wheel::before {
+    content: attr(data-value);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; /* Adjust text color for better visibility */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+#spin-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
