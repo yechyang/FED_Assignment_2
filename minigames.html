@@ -42,6 +42,7 @@
     <div class="number-container" id="numberGame">
         <h1>Number Guessing Game</h1>
         <p>Guess the number between 1 and 100:</p>
+        <p>Correct guess will earn 10 Points</p>
         <input type="number" id="guessInput">
         <button onclick="checkGuess()">Submit Guess</button>
         <p id="message"></p>
@@ -54,6 +55,7 @@
         <p>Rock wins against Scissors</p>
         <p>Paper wins against Rock</p>
         <p>Scissors wins against Paper</p>
+        <p>Win = 5 Points Lose = -5 Points</p>
         <div class="choices">
           <button onclick="playerChoice('rock')">Rock</button>
           <button onclick="playerChoice('paper')">Paper</button>
@@ -65,6 +67,7 @@
     <div class="whack-a-mole-container" id="whackamole" style="display:none">
         <h1>Whack-a-Mole</h1>
         <p>This game will last for 10 seconds, try to whack as many mole as possible for higher points</p>
+        <p>Score >= 8 Earn 10 Points else lose 10 points</p>
         <p style="font-weight:700">Mole is the black dot in the hole</p>
         <div id="gameContainer" class="game-container">
           <div class="hole">
@@ -111,6 +114,7 @@
     <div class="tic-container" id="ttt" style="display:none">
         <h1>Tic Tac Toe</h1>
         <p>You will be playing as --X--</p>
+        <p>Win = 5 Point, Lose = -5 Points </p>
         <div id="gameBoard" class="game-board">
           <div class="cell" onclick="playerMove(0)"></div>
           <div class="cell" onclick="playerMove(1)"></div>

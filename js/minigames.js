@@ -1,6 +1,7 @@
+const APIKEY = "65afdc5f482ae93fcb54da42";
 // Guess the number
 const randomNumber = Math.floor(Math.random() * 100) + 1;
-let attempts = 5;
+let attempts = 8;
 
 function checkGuess() {
   const guessInput = parseInt(document.getElementById("guessInput").value);
@@ -10,11 +11,14 @@ function checkGuess() {
     message.textContent = "Please enter a valid number between 1 and 100.";
     return;
   }
-
+  let pointsEarned = 0;
   attempts--;
-
   if (guessInput === randomNumber) {
     message.textContent = `Congratulations! You guessed the number ${randomNumber} correctly!`;
+    pointsEarned = 10;
+
+    updatePoints(pointsEarned)
+    
     disableInput();
   } else if (guessInput < randomNumber) {
     message.textContent = `Too low! You have ${attempts} attempts left.`;
@@ -56,6 +60,7 @@ function playerChoice(choice) {
   const choices = ["rock", "paper", "scissors"];
   const computerChoice = choices[Math.floor(Math.random() * choices.length)];
   const result = document.getElementById("result");
+  let pointsEarned = 0;
 
   if (choice === computerChoice) {
     result.textContent = "It's a tie!";
@@ -65,9 +70,13 @@ function playerChoice(choice) {
     (choice === "scissors" && computerChoice === "paper")
   ) {
     result.textContent = `You win! Computer chose ${computerChoice}.`;
+    pointsEarned = 5;
   } else {
     result.textContent = `You lose! Computer chose ${computerChoice}.  Try Again`;
+    pointsEarned = -5;
   }
+
+  updatePoints(pointsEarned);
 }
 
 
@@ -80,6 +89,7 @@ let lastHole;
 let timeUp = false;
 let gameTimeout;
 let gameInProgress = false;
+let pointsEarned
 
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
@@ -121,6 +131,7 @@ function startGame() {
   setTimeout(() => {
     timeUp = true;
     gameInProgress = false;
+    calculatePoints();
   }, 10000); // Game duration: 10 seconds
 }
 
@@ -130,6 +141,15 @@ function bonk(e) {
   score++;
   this.classList.remove('up');
   scoreDisplay.textContent = score;
+}
+
+function calculatePoints() {
+  if (score > 8) {
+    pointsEarned = 10;
+  } else {
+    pointsEarned = -10;
+  }
+  updatePoints(pointsEarned);
 }
 
 holes.forEach(hole => hole.addEventListener('click', bonk));
@@ -191,13 +211,14 @@ function playerMove(cellIndex) {
   
   moves[cellIndex] = currentPlayer;
   gameBoard.children[cellIndex].innerText = currentPlayer;
-  
+  let pointsEarned = 0;
   const winner = checkWinner();
   if (winner) {
     if (winner === 'Draw') {
       statusDisplay.innerText = "It's a draw!";
     } else {
       statusDisplay.innerText = `${winner} wins!`;
+      pointsEarned = 5
     }
     gameActive = false;
   } else {
@@ -210,11 +231,13 @@ function playerMove(cellIndex) {
           statusDisplay.innerText = "It's a draw!";
         } else {
           statusDisplay.innerText = `${botWinner} wins!`;
+          pointsEarned = -5
         }
         gameActive = false;
       }
     }
   }
+  updatePoints(pointsEarned)
 }
 
 function resetGame() {
@@ -225,4 +248,38 @@ function resetGame() {
   Array.from(gameBoard.children).forEach(cell => {
     cell.innerText = '';
   });
+}
+
+
+
+function updatePoints(pointsEarned) {
+  let userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
+  if (!userAccount) {
+    console.error('User account not found in sessionStorage.');
+    return;
+  }
+
+  // Add pointsEarned to user's points
+  userAccount.point += pointsEarned;
+
+  sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+
+  let settings = {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY, // Ensure API key is securely managed
+        "Cache-Control": "no-cache"
+    },
+    body: JSON.stringify(userAccount) // Send the updated user account object in the body
+  };
+
+  fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    .then(response => response.json())
+    .then(data => {
+      console.log("Points updated successfully:", data);
+    })
+    .catch(error => {
+      console.error("Error updating points:", error);
+    });
 }
