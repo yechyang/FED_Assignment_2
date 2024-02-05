@@ -1,6 +1,6 @@
 .payment-container {
     display: flex;
-    height: 120vh; /* Adjust height as needed */
+    height: 130vh; /* Adjust height as needed */
     color:black;
 }
 
@@ -37,7 +37,7 @@ form{
 
 .btn-wide {
     width: 200px;
-    margin-top:20px;
+    margin-top:0px;
 }
 
 
@@ -60,4 +60,9 @@ form{
 
 .text-container h3 {
     margin-top: 0;
+}
+
+#userPointsDisplay{
+    margin-bottom:5px;
+    margin-left:10px;
 }
