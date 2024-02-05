@@ -1,9 +1,29 @@
+.message{
+  color:black;
+  text-align: center;
+  margin-bottom:50px;
+}
+
+.message h1{
+  font-size:40px;
+}
+
+.message p{
+  font-size:19px;
+}
+
+/* Number guessing game */
 .number-container {
     text-align: center;
     margin-top: 50px;
-  }
+    color:black;
+}
+
+.number-container h1{
+  font-size:40px;
+}
   
-  .number-container button {
+.number-container button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -11,8 +31,139 @@
     cursor: pointer;
     margin-top: 10px;
     border-radius:20px;
-  }
+}
   
-  .number-container button:hover {
+.number-container button:hover {
     background-color: #45a049;
-  }
+}
+
+.minigames-background {
+  position: relative;
+  margin-top:150px;
+  height: 80vh;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+/* Style the video to cover the entire container */
+.minigames-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+/* Rock Paper Scissors */
+.rock-paper-scissors {
+  text-align: center;
+  margin-top: 50px;
+  color:black
+}
+
+.choices button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.choices button:hover {
+  background-color: #45a049;
+}
+
+/* Whack-A-Mole */
+.whack-a-mole-container {
+  text-align: center;
+  margin-top: 50px;
+  color:black;
+  font-size:18px;
+}
+
+.game-container {
+  width:800px;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #9a723a;
+  border: 2px solid #654321;
+  border-radius: 50%;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; /* Ensure mole stays within hole */
+}
+
+.mole {
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hide the mole */
+}
+
+.mole.active {
+  display: block; /* Display mole when it pops up */
+}
+
+.whack-a-mole-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+/* Tic Tac Toe game */
+.tic-container {
+  text-align: center;
+  margin-top: 50px;
+  color:black;
+}
+
+.game-board {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border: 2px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.status {
+  margin-top: 20px;
+}
+
+.tic-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
