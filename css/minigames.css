@@ -1,0 +1,18 @@
+.number-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .number-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius:20px;
+  }
+  
+  .number-container button:hover {
+    background-color: #45a049;
+  }
