@@ -3,16 +3,16 @@ const spinBtn = document.getElementById("spin-btn");
 const finalValue = document.getElementById("final-value");
 //Object that stores values of minimum and maximum angle for a value
 const rotationValues = [
-  { minDegree: 0, maxDegree: 30, value: 2 },
-  { minDegree: 31, maxDegree: 90, value: 1 },
-  { minDegree: 91, maxDegree: 150, value: 6 },
-  { minDegree: 151, maxDegree: 210, value: 5 },
-  { minDegree: 211, maxDegree: 270, value: 4 },
-  { minDegree: 271, maxDegree: 330, value: 3 },
-  { minDegree: 331, maxDegree: 360, value: 2 },
+  { minDegree: 0, maxDegree: 30, value: 20 },
+  { minDegree: 31, maxDegree: 90, value: 10 },
+  { minDegree: 91, maxDegree: 150, value: 60 },
+  { minDegree: 151, maxDegree: 210, value: 15 },
+  { minDegree: 211, maxDegree: 270, value: 40 },
+  { minDegree: 271, maxDegree: 330, value: 30 },
+  { minDegree: 331, maxDegree: 360, value: 20 },
 ];
 //Size of each piece
-const data = [16, 16, 16, 16, 16, 16];
+const data = [20, 20, 20, 20, 20, 20];
 //background color for each piece
 var pieColors = [
   "#8b35bc",
@@ -30,7 +30,7 @@ let myChart = new Chart(wheel, {
   type: "pie",
   data: {
     //Labels(values which are to be displayed on chart)
-    labels: [1, 2, 3, 4, 5, 6],
+    labels: [10, 20, 30, 40, 15, 60],
     //Settings for dataset/pie
     datasets: [
       {
@@ -53,7 +53,7 @@ let myChart = new Chart(wheel, {
       datalabels: {
         color: "#ffffff",
         formatter: (_, context) => context.chart.data.labels[context.dataIndex],
-        font: { size: 24 },
+        font: { size: 27 },
       },
     },
   },
@@ -63,7 +63,7 @@ const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
     //if the angleValue is between min and max then display it
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      finalValue.innerHTML = `<p>Value: ${i.value}</p>`;
+      finalValue.innerHTML = `<p>Points: ${i.value}</p>`;
       spinBtn.disabled = false;
       break;
     }
