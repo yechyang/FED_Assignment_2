@@ -46,7 +46,6 @@
 .custom-container {
   position: fixed;
   top: 0;
-  /*background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);*/
   background: transparent;
   height: 100vh;
   width: 150vh;
@@ -165,14 +164,11 @@
 
 #loading-animation {
   width: 300px;
-  /* Adjust width as needed */
   height: 300px;
-  /* Adjust height as needed */
 }
 
 .box-container {
   display: none;
-  /* Initially hide the product boxes */
 }
 
 .loading-container {
@@ -181,7 +177,6 @@
   align-items: center;
   flex-direction: column;
 }
-
 
 .background {
   display: flex;
@@ -193,62 +188,47 @@
   background-position: center;
 }
 
-
-/* .search-container {
+.women-background {
   display: flex;
-  justify-content: center; 
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/FED_Assignment_2/images/closeup-gray-sofa-with-basket-folded-clothes-small-table-near-it.jpg");
+  background-size: cover;
+  background-position: center;
 }
-
-#searchInput {
-  width: 300px; 
-} */
-
 
 .search{
   position: relative;
   box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-    
-  }
+}
 
-  .search input{
-
+.search input{
    height: 60px;
    text-indent: 25px;
    border: 2px solid #d6d4d4;
+}
 
-
-  }
-
-
-  .search input:focus{
-
+.search input:focus{
    box-shadow: none;
    border: 2px solid blue;
+}
 
-
-  }
-
-  .search .fa-search{
-
+.search .fa-search{
    position: absolute;
    top: 20px;
    left: 16px;
+}
 
-  }
-
-  .search button{
-
+.search button{
    position: absolute;
    top: 5px;
    right: 5px;
    height: 50px;
    width: 110px;
    background: blue;
+}
 
-  }
-
-
-  
 .box1 img {
   max-width: 100%;
   height: 200px;

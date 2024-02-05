@@ -79,9 +79,10 @@ The website is catered for user who want to purchase Clothing and learn more abo
 
 ## CREDITS
 ### Media 
-Images created by Freepik
+Images Created by Freepik
 Icons Created by Flaticon
-Videos created by Pexels
+Videos Created by Pexels
+Images From Uniqlo Singapore 
 
 ### Acknowledgements
 - I received inspiration from Uniqlo Singapore
