@@ -20,3 +20,14 @@ textarea.form-control{
 .lottie dotlottie-player {
     display: inline-block;
 }
+
+iframe{
+    width:1518px;
+}
+
+
+@media screen and (max-width: 500px) {
+    iframe{
+        width:375px;
+    }
+}
