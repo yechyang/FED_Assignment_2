@@ -2,6 +2,7 @@
 
 ## By:
 ## Koh Ye Chyang (S10262604)
+## Louis
 
 ## I used Iphone X for the responsiveness
 
@@ -79,10 +80,12 @@ The website is catered for user who want to purchase Clothing and learn more abo
 
 ## CREDITS
 ### Media 
-Images Created by Freepik
-Icons Created by Flaticon
-Videos Created by Pexels
-Images From Uniqlo Singapore 
+- Images Created by Freepik
+- Icons Created by Flaticon
+- Videos Created by Pexels
+- Images From Uniqlo Singapore (Product Images)
+- Games design from CodeNepal
 
 ### Acknowledgements
-- I received inspiration from Uniqlo Singapore
+- I received inspiration from Uniqlo Singapore and Iora Singapore
+- I received game inspiration for CodeNepal
