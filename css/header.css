@@ -65,3 +65,39 @@ nav a:hover {
     color: black;
     font-size:20px;
 }
+
+@media screen and (max-width: 500px) {
+    header {
+        font-size: 14px; /* Reduce header font size for smaller screens */
+    }
+
+    .logo-container {
+        top: 10px; /* Adjusted for smaller screens */
+        right: 10px; /* Adjusted for smaller screens */
+    }
+
+    .logo {
+        margin-top:20px;
+        margin-bottom:20px;
+        max-width: 50px; 
+    }
+
+    .additional-logo {
+        max-width: 20px;
+        max-height:20px;
+        margin-right: 5px;
+    }
+
+    nav {
+        display: flex; /* Display the nav on smaller screens */
+        justify-content: center;
+        background-color: #9f9a94;
+        padding: 2px;
+    }
+
+    nav a {
+        margin: 0; /* Remove the margin for links */
+        font-size:16px;
+        padding:6px;
+    }
+}
