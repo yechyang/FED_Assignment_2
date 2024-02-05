@@ -100,7 +100,7 @@
 }
 
 input[type="Message"] {
-    width: 460px;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -110,7 +110,8 @@ input[type="Message"] {
 
 .bot-button {
     padding: 10px 20px;
-    width:482px;
+    padding: 10px 20px;
+    width: calc(100% - 0px);
     border: none;
     background-color: #007bff;
     color: #fff;
@@ -121,4 +122,19 @@ input[type="Message"] {
 
 .bot-button:hover {
     background-color: #0056b3;
+}
+
+@media screen and (max-width: 500px){
+    .chat-container {
+        left:5%;
+        max-width:328px;
+    }
+    
+    .chat-box {
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 }

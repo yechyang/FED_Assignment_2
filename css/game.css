@@ -136,7 +136,8 @@
 }
 
 input[type="text"] {
-    width: 460px;
+    width: calc(100% - 0px);
+    max-width: 460px;
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -146,7 +147,8 @@ input[type="text"] {
 
 .bot-button {
     padding: 10px 20px;
-    width:460px;
+    width: calc(100% - 0px);
+    max-width: 460px;
     border: none;
     background-color: #007bff;
     color: #fff;
@@ -157,4 +159,17 @@ input[type="text"] {
 
 .bot-button:hover {
     background-color: #0056b3;
+}
+
+
+@media screen and (max-width: 500px){
+    #userPointsDisplay{
+        font-size:16px;
+        left: 20%;
+        width:200px;
+    }
+    .game2-responsive-img button{
+        top: 70%;
+        left: 50%;
+    }
 }
