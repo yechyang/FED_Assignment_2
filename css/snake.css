@@ -40,3 +40,23 @@ canvas {
     left:90%;
     filter: invert(100%);
 }
+
+@media screen and (max-width: 500px){
+    .snake-container{
+        margin-bottom:10px;
+    }
+    canvas{
+        margin-top: 320px;
+        width:365px;
+    }
+    .closeimg{
+        width:30px;
+        top:3%;
+        left:88%
+    }
+    .instruction{
+        width:350px;
+        top:37%;
+        text-align: center;
+    }
+}
