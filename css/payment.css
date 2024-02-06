@@ -66,3 +66,49 @@ form{
     margin-bottom:5px;
     margin-left:10px;
 }
+
+.input-box{
+    width:400px
+}
+
+.small-input-box{
+    width:190px;
+}
+
+@media screen and (max-width: 500px) {
+    .payment-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-container, .right-container {
+        width: 100%; 
+    }
+    .right-container {
+        order: -1; /* Set the right container to appear first */
+    }
+    .input-box{
+        width:300px;
+        margin-left:35px;
+    }
+    
+    .small-input-box{
+        width:100px;
+        margin-left:35px;
+    }
+    form{
+        width:370px;
+    }
+    #total-price-display {
+        display: block;
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+
+    .row.justify-content-center{
+        width:375px;
+    }
+
+    #userPointsDisplay{
+        margin-left:40px;
+    }
+}
