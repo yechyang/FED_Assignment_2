@@ -71,7 +71,7 @@ h2{
     position: absolute;
     inset: 0;
     background-color: blanchedalmond;
-    opacity: 0.70;  /* Testing purposes, can delete this or comment it out if dont need.*/
+    /* opacity: 0.70; */  /* Testing purposes, can delete this or comment it out if dont need.*/
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
@@ -79,3 +79,4 @@ h2{
 .boxOpen:after, .boxMatch:after{
     transform: rotateY(180deg);
 }
+
