@@ -388,6 +388,8 @@ window.addEventListener('load', function () {
         if (cartQuantitySpan) {
           cartQuantitySpan.textContent = cartQuantity.toString();
         }
+        updateCartItemQuantity(itemData, quantity + 1);
+        sessionStorage.setItem('totalPrice', totalPrice.toFixed(2));
       });
 
       minusSpan.addEventListener('click', function () {
@@ -402,25 +404,25 @@ window.addEventListener('load', function () {
           if (cartQuantitySpan) {
             cartQuantitySpan.textContent = cartQuantity.toString();
           }
+          updateCartItemQuantity(itemData, quantity - 1);
+          sessionStorage.setItem('totalPrice', totalPrice.toFixed(2));
         }
       });
 
       if (addToSessionStorage) {
+        var storedCartQuantity = parseInt(sessionStorage.getItem('cartQuantity')) || 0;
+        sessionStorage.setItem('cartQuantity', storedCartQuantity + 1);
         // Store item in sessionStorage
         var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-        cartItems.push({
+        var itemData = {
           image: image,
           text: text,
-          secondText: secondText
-        });
+          secondText: secondText,
+          quantity: 1
+        };
+        cartItems.push(itemData);
         sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-        var totalPriceInStorage = parseFloat(sessionStorage.getItem('totalPrice')) || 0;
-        totalPriceInStorage += productPrice;
-        sessionStorage.setItem('totalPrice', totalPriceInStorage.toFixed(2));
       }
-
-      sendCartDataToServer(listItem, cartQuantity);
 
       // Log to console for verification (you can remove this line in the final version)
       console.log('Product added to cart:', { image, text, secondText });
@@ -446,11 +448,13 @@ window.addEventListener('load', function () {
 
         // Remove cartItems from sessionStorage
         sessionStorage.removeItem('cartItems');
+        sessionStorage.removeItem('cartQuantity')
+        sessionStorage.removeItem('totalPrice')
       }
     });
   }
 
-  function sendCartDataToServer(cartItem, cartQuantity) {
+ /* function sendCartDataToServer(cartItem, cartQuantity) {
     var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
     if (!userAccount) {
         console.error('User account not found in sessionStorage.');
@@ -468,6 +472,14 @@ window.addEventListener('load', function () {
       "Quantity": cartQuantity,
     };
 
+    // Ensure userAccount has a cartItems array
+    userAccount.cartItems = userAccount.cartItems || [];
+
+    // Append the new item to the cartItems array
+    userAccount.cartItems.push(itemData);
+
+    sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+
     // Set up the AJAX settings
     var settings = {
       method: "POST",
@@ -476,11 +488,11 @@ window.addEventListener('load', function () {
         "x-apikey": APIKEY,
         "Cache-Control": "no-cache",
       },
-      body: JSON.stringify(itemData),
+      body: JSON.stringify(userAccount),
     };
 
     // Send the AJAX request
-    fetch("https://fedassg-a6f6.restdb.io/rest/cart", settings)
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Cart data sent to server:", data);
@@ -489,7 +501,7 @@ window.addEventListener('load', function () {
         console.error("Error sending cart data to server:", error);
       });
   }
-});
+});*/
 
 
 function isUserLoggedIn() {
@@ -497,3 +509,15 @@ function isUserLoggedIn() {
   var currentUserAccount = sessionStorage.getItem("userAccount");
   return currentUserAccount !== null;
 } 
+
+
+function updateCartItemQuantity(itemData, newQuantity) {
+  // Find the item in cartItems array and update its quantity
+  var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+  var index = cartItems.findIndex(item => item.text === itemData.text && item.secondText === itemData.secondText);
+  if (index !== -1) {
+      cartItems[index].quantity = newQuantity;
+      sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }
+}
+});

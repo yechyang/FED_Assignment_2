@@ -3,23 +3,6 @@ const APIKEY = "65afdc5f482ae93fcb54da42";
 // Get a reference to the cart items container
 var cartItemsContainer = document.getElementById('cart-items-container');
 
-// Retrieve cart items from sessionStorage if available
-var storedCartItems = JSON.parse(sessionStorage.getItem('cartItems'));
-
-// Check if the container exists and cart items are available
-if (cartItemsContainer && storedCartItems) {
-    // Render the cart items inside the container
-    storedCartItems.forEach(function(item) {
-        renderCartItem(item);
-    });
-
-    var totalPriceDisplay = document.getElementById('total-price-display');
-    var totalPrice = parseFloat(sessionStorage.getItem('totalPrice')) || 0;
-    totalPriceDisplay.textContent = 'Total Price: $' + totalPrice.toFixed(2);
-} else {
-    console.error('Cart items container not found or no cart items in sessionStorage.');
-}
-
 function renderCartItem(item) {
     // Create a div element for each item
     var boxDiv = document.createElement('div');
@@ -27,7 +10,7 @@ function renderCartItem(item) {
 
     // Create an image element and set its attributes
     var image = document.createElement('img');
-    image.src = item.image;
+    image.src = '/FED_Assignment_2/images/' + item.Name + '.png';
     image.alt = 'Product Image';
     boxDiv.appendChild(image);
 
@@ -37,15 +20,17 @@ function renderCartItem(item) {
 
     // Create a heading element for the product text
     var title = document.createElement('h4');
-    title.textContent = item.text;
+    title.textContent = item.Name;
     textContainer.appendChild(title);
 
     // Check if secondText exists before creating a paragraph element for it
-    if (item.secondText) {
-        var description = document.createElement('p');
-        description.textContent = item.secondText;
-        textContainer.appendChild(description);
-    }
+    var description = document.createElement('p');
+    description.textContent = 'Price: $' + item.Price;
+    textContainer.appendChild(description);
+
+    var quantity = document.createElement('p');
+    quantity.textContent = 'Quantity: ' + item.Quantity;
+    textContainer.appendChild(quantity);
 
     // Append the text container to the box div
     boxDiv.appendChild(textContainer);
@@ -177,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const userPoints = userAccount.point;
                 // Display the points on the webpage
                 document.getElementById("userPointsDisplay").textContent = `Available Points: ${userPoints}`;
+                sendCartDataToServer(userAccount);
+                userAccount.cartItems.forEach(function(cartItem) {
+                    renderCartItem(cartItem);
+                });
             } else {
                 console.log(`User ${storedUserAccount.username} not found.`);
             }
@@ -188,3 +177,53 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("No user account found in sessionStorage or username missing.");
     }
 });
+
+
+function sendCartDataToServer(userAccount) {
+    if (!userAccount) {
+        console.error('User account not found in sessionStorage.');
+        return;
+    }
+    // Retrieve cart items from sessionStorage
+    var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+    userAccount.cartItems = userAccount.cartItems || [];
+
+    cartItems.forEach(function(cartItem) {
+        // Extract relevant information from the current cart item
+        var productName = cartItem.text;
+        var productPrice = parseFloat(cartItem.secondText.replace('$', ''));
+        var cartQuantity = cartItem.quantity;
+    
+        // Create an object with the extracted information for the current item
+        var itemData = {
+            "Name": productName,
+            "Price": productPrice,
+            "Quantity": cartQuantity
+        };
+    
+        // Push the itemData object into the userAccount.cartItems array
+        userAccount.cartItems.push(itemData);
+    });
+
+    // Set up the AJAX settings
+    var settings = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache",
+        },
+        body: JSON.stringify(userAccount),
+    };
+
+    // Send the AJAX request
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Cart data sent to server:", data);
+        })
+        .catch(error => {
+            console.error("Error sending cart data to server:", error);
+        });
+}

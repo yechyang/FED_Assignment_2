@@ -102,13 +102,8 @@ function collision(head, array) {
 }
 
 function startGame() {
-    let userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
-    if (userAccount && userAccount.point >= 5) {
-        updatePoints(-5);
-        game = setInterval(draw, 100);
-    } else {
-        alert("You don't have sufficient points to play the game. Earn more points to play.");
-    }
+    updatePoints(-5);
+    game = setInterval(draw, 100);
 }
 
 function isUserLoggedIn() {
