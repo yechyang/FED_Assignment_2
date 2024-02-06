@@ -46,17 +46,32 @@ function sendMessage() {
     botMessage.classList.add("bot-message");
 
     switch(userInput.toLowerCase()) {
-        case "hangsnowman":
-            botMessage.textContent = "Let's play Hangman!";
+        case "list":
+            botMessage.textContent = "Games available: hangman, minigames, snake";
+            break;
+        case "hangman":
+            botMessage.textContent = "Let's play SnowHangman!";
             setTimeout(function() {
                 window.location.href = "/FED_Assignment_2/hangman.html";
             }, 2000);
             break;
         case "spinthewheel":
             botMessage.textContent = "Let's play Spin the Wheel!";
+            setTimeout(function() {
+                window.location.href = "";
+            }, 2000);
             break;
-        case "clicker":
-            botMessage.textContent = "Let's play Clicker!";
+        case "minigames":
+            botMessage.textContent = "Let's play Minigames!";
+            setTimeout(function() {
+                window.location.href = "/FED_Assignment_2/minigames.html";
+            }, 2000);
+            break;
+        case "snake":
+            botMessage.textContent = "Let's play snake game!";
+            setTimeout(function() {
+                window.location.href = "/FED_Assignment_2/snake.html";
+            }, 2000);
             break;
         default:
             botMessage.textContent = "I didn't understand that. Please choose from hangsnowman, spinthewheel, or clicker.";

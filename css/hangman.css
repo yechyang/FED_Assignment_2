@@ -259,4 +259,23 @@
     .game-modal button {
         padding: 10px 18px;
     }
+
+    .modal-content{
+        width:250px;
+    }
+
+    .closeimg{
+        width:30px;
+        height:30px;
+        left:85%;
+    }
+
+    #easyBtn{
+        width:300px;
+    }
+    
+    #hardBtn{
+        width:300px;
+    }
+    
 }

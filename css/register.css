@@ -79,10 +79,9 @@
 }
 
 .register-background{
-    background-image: url('/FED_Assignment_2/images/black-white-minimal-portrait.jpg');
+    background-image: url('/FED_Assignment_2/images/woman-with-flying-hair.jpg');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
     background-color: transparent;
     padding: 0;
     position: relative;

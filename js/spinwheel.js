@@ -1,18 +1,35 @@
-const wheel = document.querySelector('.wheel');
-const spinBtn = document.getElementById('spin-btn');
+document.addEventListener('DOMContentLoaded', function () {
+    let wheel = document.querySelector('.wheel');
+    let spinBtn = document.querySelector('.spinBtn');
+    
+    spinBtn.onclick = function () {
+        // Disable the spin button to prevent multiple clicks
+        spinBtn.disabled = true;
 
-spinBtn.addEventListener('click', () => {
-    const degrees = Math.floor(Math.random() * 360) + 3600;
-    wheel.style.transition = 'all 3s ease-out';
-    wheel.style.transform = `rotate(${degrees}deg)`;
+        // Generate a random angle for spinning
+        let randomAngle = Math.ceil(Math.random() * 10000);
 
-    setTimeout(() => {
-        alert('You get ' + getLandedSection(degrees) + ' points');
-    }, 3000);
+        // Calculate the final angle of rotation after spinning
+        let finalAngle = randomAngle % 360;
+
+        // Rotate the wheel
+        wheel.style.transition = "transform 5s ease-in-out";
+        wheel.style.transform = "rotate(" + (360 - finalAngle) + "deg)";
+
+        // Delay to allow the wheel to finish spinning
+        setTimeout(function () {
+            // Enable the spin button after spinning ends
+            spinBtn.disabled = false;
+
+            // Calculate the index of the section where the wheel stops
+            let sectionIndex = Math.floor(finalAngle / 45); // 360 / 8 = 45 degrees per section
+
+            // Get the value of the section where the wheel stops
+            let values = ['5', '10', 'Nothing', '15', '20', 'Nothing', '5', '10'];
+            let landedValue = values[sectionIndex];
+
+            // Display or use the landed value
+            alert("The wheel landed on: " + landedValue);
+        }, 5000); // Adjust this timeout to match the transition duration
+    }
 });
-
-function getLandedSection(degrees) {
-    const sections = ['20', '15', '30', '40', '50', '60'];
-    const index = Math.floor((degrees % 360) / (360 / sections.length));
-    return sections[index];
-}

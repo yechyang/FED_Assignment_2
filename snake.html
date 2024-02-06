@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/snake.css">
+    <link rel="stylesheet" href="css/normalize.css">
+</head>
+<body style="background-color:rgb(29, 29, 29)">
+    <div class="snake-container" style="color:white;">
+        <h1>Snake Game</h1>
+        <p>you are green</p>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <p>Score: <span id="score">0</span></p>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <a href="game.html"><img src="images/close.png" class="closeimg"></a>
+
+    <div class="instruction">
+        <h1 style="text-decoration: underline;">How to Play</h1>
+        <p>1. Use arrow keys or WASD keys to move the snake.</p>
+        <p>2. Eat the red food to grow the snake and increase score.</p>
+        <p>3. Avoid running into walls or yourself.</p>
+        <p>4. Try to get the highest score!</p>
+        <p>5. Last but not least Enjoy!!</p>
+    </div>
+    
+    <script src="js/snake.js"></script>
+</body>
+</html>
