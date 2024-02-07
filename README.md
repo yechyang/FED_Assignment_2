@@ -144,6 +144,7 @@ questions and clicked on the Register button
 - [LottieFiles](https://lottiefiles.com/)
 - [BootStrap](https://getbootstrap.com/)
 - [GitHub](https://github.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Testing
 1. Add to cart:
