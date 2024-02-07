@@ -88,3 +88,22 @@ h2{
     left:90%;
     filter: invert(100%);
 }
+
+@media screen and (max-width: 500px){
+    .container{
+        width:370px;
+        height:1200px;
+    }
+    .game{
+        width:300px;
+        margin-left:80px;
+        margin-bottom:500px;
+    }
+    .closeimg{
+        width:30px;
+        left:85%;
+    }
+    h2{
+        margin-left:50px;
+    }
+}
