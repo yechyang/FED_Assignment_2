@@ -169,6 +169,12 @@ function sendMessage() {
                 window.location.href = "/FED_Assignment_2/payment.html";
             }, 2000);
             break;
+        case "men product":
+            botMessage.textContent = "Processing.....";
+            setTimeout(function() {
+                window.location.href = "/FED_Assignment_2/men-product.html";
+            }, 2000);
+            break;
         default:
             botMessage.textContent = "I didn't understand that. Please choose a proper page.";
             break;

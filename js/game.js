@@ -52,25 +52,25 @@ function sendMessage() {
         case "hangman":
             botMessage.textContent = "Let's play SnowHangman!";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/hangman.html";
+                window.location.href = "hangman.html";
             }, 2000);
             break;
         case "memory":
             botMessage.textContent = "Let's play Memory Game";
             setTimeout(function() {
-                window.location.href = "/FED_Assigment_2/memory-game.html";
+                window.location.href = "memory-game.html";
             }, 2000);
             break;
         case "minigames":
             botMessage.textContent = "Let's play Minigames!";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/minigames.html";
+                window.location.href = "minigames.html";
             }, 2000);
             break;
         case "snake":
             botMessage.textContent = "Let's play snake game!";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/snake.html";
+                window.location.href = "snake.html";
             }, 2000);
             break;
         default:

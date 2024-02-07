@@ -20,11 +20,11 @@ hardBtn.addEventListener("click", function() {
 let timerInterval;
 
 function startGame(difficulty) {
-    if (!isUserLoggedIn()) {
-        alert("Please log in to play the game. Click OK to log in.");
-        window.location.href = "/FED_Assignment_2/sign-in.html"; // Redirect to the login page
-        return;
-    }
+    // if (!isUserLoggedIn()) {
+    //     alert("Please log in to play the game. Click OK to log in.");
+    //     window.location.href = "sign-in.html"; // Redirect to the login page
+    //     return;
+    // }
     // Reset the game with the selected difficulty
     // For example, you can set maxGuesses based on difficulty
     if (difficulty === "easy") {
@@ -76,7 +76,7 @@ const resetGame = () => {
     // Resetting game variables and UI elements
     correctLetters = [];
     wrongGuessCount = 0;
-    hangmanImage.src = "/FED_Assignment_2/images/hangman-0.jpg";
+    hangmanImage.src = "../FED_Assignment_2/images/hangman-0.jpg";
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
@@ -94,7 +94,7 @@ const getRandomWord = () => {
 const ending = (isVictory) => {
     // After game complete.. showing modal with relevant details
     const modalText = isVictory ? `You found the word:` : 'The correct word was:';
-    gameModal.querySelector("img").src = `/FED_Assignment_2/images/${isVictory ? 'victory' : 'lost'}.gif`;
+    gameModal.querySelector("img").src = `../FED_Assignment_2/images/${isVictory ? 'victory' : 'lost'}.gif`;
     gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
@@ -154,7 +154,7 @@ const initGame = (button, clickedLetter) => {
     } else {
         // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
         wrongGuessCount++;
-        hangmanImage.src = `/FED_Assignment_2/images/hangman-${wrongGuessCount}.jpg`;
+        hangmanImage.src = `../FED_Assignment_2/images/hangman-${wrongGuessCount}.jpg`;
     }
     button.disabled = true; // Disabling the clicked button so user can't click again
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
