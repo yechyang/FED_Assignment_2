@@ -29,6 +29,8 @@ function direction(event) {
     }
 }
 
+let pointsAwarded = false;
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < snake.length; i++) {
@@ -65,31 +67,12 @@ function draw() {
     snakeY >= canvas.height || 
     collision(newHead, snake)
   ) {
-    clearInterval(game);
-    alert("Game Over! Your score: " + score);
-    window.location.reload();
+    gameOver();
   }
 
   snake.unshift(newHead);
 
   document.getElementById("score").innerText = score;
-  let pointsEarned = 0;
-  if (score >= 10){
-    pointsEarned = 5
-  }
-  else if(score >= 15){
-    pointsEarned = 10
-  }
-  else if(score >= 25){
-    pointsEarned = 20
-  }
-  else if(score >= 35){
-    pointsEarned = 30
-  }
-  else{
-    pointsEarned = -10
-  }
-  updatePoints(pointsEarned)
 }
 
 function collision(head, array) {
@@ -102,9 +85,25 @@ function collision(head, array) {
 }
 
 function startGame() {
-    updatePoints(-5);
     game = setInterval(draw, 100);
 }
+
+
+function gameOver() {
+  clearInterval(game);
+  if (score >= 25){
+    updatePoints(20)
+  }
+  else if (score >= 15){
+    updatePoints(10)
+  }
+  else if (score >= 10){
+    updatePoints(5)
+  }
+  alert("Game Over! Your score: " + score);
+  window.location.reload();
+}
+
 
 function isUserLoggedIn() {
     // Check if the currentUserAccount exists in sessionStorage

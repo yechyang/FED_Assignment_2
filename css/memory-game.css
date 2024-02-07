@@ -80,3 +80,11 @@ h2{
     transform: rotateY(180deg);
 }
 
+
+.closeimg{
+    width:40px;
+    position:absolute;
+    top:10%;
+    left:90%;
+    filter: invert(100%);
+}

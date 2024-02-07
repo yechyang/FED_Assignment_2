@@ -88,6 +88,10 @@ nav a:hover {
         margin-right: 5px;
     }
 
+    .user-account-container{
+        font-size:12px;
+    }
+
     nav {
         display: flex; /* Display the nav on smaller screens */
         justify-content: center;

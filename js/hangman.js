@@ -177,8 +177,9 @@ playAgainBtn.addEventListener("click", function() {
     location.reload();
 });
 
+
 function isUserLoggedIn() {
     // Check if the currentUserAccount exists in sessionStorage
     var currentUserAccount = sessionStorage.getItem("userAccount");
     return currentUserAccount !== null;
-  }
+}

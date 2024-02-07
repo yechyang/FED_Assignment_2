@@ -234,13 +234,69 @@
   height: 200px;
 }
 
-.redeem-background {
-  display: flex;
-  min-height: 50vh;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/FED_Assignment_2/images/beautiful-gift-voucher-with-decoration.jpg");
-  background-size: cover;
-  background-position: center;
-  margin-bottom:40px;
+
+@media screen and (max-width: 500px){
+  .custom-container {
+    width: 370px;
+  }
+  
+  .Heading {
+    font-size: 26px;
+  }
+  
+  .Action {
+    font-size: 16px;
+  }
+  
+  .shopping-cart-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .shopping-cart-list li {
+    margin-bottom: 50px;
+    margin-left: 100px;
+  }
+  
+  .content-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content-container img {
+    width: 130px;
+    height: 150px;
+    margin-right: 10px;
+  }
+  
+  .content-container p {
+    margin-left: 15px;
+    font-size: 20px;
+  }
+  
+  .plus-sign,
+  .one-sign,
+  .minus-sign {
+    font-size: 24px;
+    color: black;
+    margin: 10px 0;
+    margin-bottom: 28px;
+    margin-left: 50px;
+    margin-right: 0px;
+  }
+  
+  .plus-sign,
+  .minus-sign {
+    cursor: pointer;
+  }
+  
+  .cart-button {
+    bottom: 8%;
+    left: 50%;
+  }
+
+  #total-price {
+    bottom: 12.5%;
+    left: 29%;
+  }
 }

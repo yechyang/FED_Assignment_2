@@ -186,15 +186,7 @@
     transform: scale(1.05); 
   }
 
-.star-rating {
-    font-size: 30px;
-    color: #ccc;
-}
 
-/* Change color for selected stars */
-.star-rating.checked {
-    color: #ffcc00;
-}
 
 
 @media screen and (max-width: 500px) {

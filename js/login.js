@@ -182,3 +182,9 @@ function sendMessage() {
     // Clear user input field
     document.getElementById("user-input").value = "";
 }
+
+document.getElementById("user-input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});

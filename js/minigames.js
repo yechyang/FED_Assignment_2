@@ -283,3 +283,18 @@ function updatePoints(pointsEarned) {
       console.error("Error updating points:", error);
     });
 }
+
+
+function isUserLoggedIn() {
+  // Check if the currentUserAccount exists in sessionStorage
+  var currentUserAccount = sessionStorage.getItem("userAccount");
+  return currentUserAccount !== null;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (!isUserLoggedIn()) {
+    alert("Please log in to play the game. Click OK to log in.");
+    window.location.href = "/FED_Assignment_2/sign-in.html"; // Redirect to the login page
+    return;
+  }
+});

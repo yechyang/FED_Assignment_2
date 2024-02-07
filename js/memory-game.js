@@ -24,7 +24,8 @@ for ( var i=0; i < emojis.length; i++){
         
                     if(document.querySelectorAll('.boxMatch').length == 
                     emojis.length){
-                        alert('Congrats! You win 20 points.')
+                        updatePoints(10);
+                        alert('Congrats! You win 10 points.')
                     }
         
                 } 
@@ -40,3 +41,35 @@ for ( var i=0; i < emojis.length; i++){
     
     document.querySelector('.game').appendChild(box);
 }
+
+function updatePoints(pointsEarned) {
+    let userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
+    if (!userAccount) {
+      console.error('User account not found in sessionStorage.');
+      return;
+    }
+  
+    // Add pointsEarned to user's points
+    userAccount.point += pointsEarned;
+  
+    sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+  
+    let settings = {
+      method: "PUT",
+      headers: {
+          "Content-Type": "application/json",
+          "x-apikey": APIKEY, // Ensure API key is securely managed
+          "Cache-Control": "no-cache"
+      },
+      body: JSON.stringify(userAccount) // Send the updated user account object in the body
+    };
+  
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Points updated successfully:", data);
+      })
+      .catch(error => {
+        console.error("Error updating points:", error);
+      });
+  }
