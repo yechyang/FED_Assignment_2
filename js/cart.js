@@ -369,6 +369,7 @@ window.addEventListener('load', function () {
       // Update the total price element
       if (totalPriceElement) {
         totalPriceElement.textContent = 'Total Price: $' + totalPrice.toFixed(2);
+        sessionStorage.setItem('totalPrice', totalPrice.toFixed(2));
       }
 
       cartQuantity++;

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65c345cac384b99ce782ea34";
+    const APIKEY = "65c39dd1bd65338552113602";
     let allProducts; // Store all products for filtering
 
     // Initial fetch to get all products
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }
 
-        fetch("https://fedtest2-4198.restdb.io/rest/item", settings)
+        fetch("https://testfed-475d.restdb.io/rest/item", settings)
             .then(response => response.json())
             .then(response => {
                 allProducts = response; // Store all products for filtering
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < products.length; i++) {
             let item = products[i];
-            let imagePath = '/FED_Assignment_2/images/' + encodeURIComponent(item.Product) + '.png';
+            let imagePath = 'images/' + encodeURIComponent(item.Product) + '.png';
 
             content += `<div class="col-md-4">
                 <div class="box text-center"> 

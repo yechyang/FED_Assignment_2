@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65c345cac384b99ce782ea34";
+    const APIKEY = "65c39dd1bd65338552113602";
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
 
     if (storedUserAccount && storedUserAccount.username) {
-        fetch(`https://fedtest2-4198.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
+        fetch(`https://testfed-475d.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
