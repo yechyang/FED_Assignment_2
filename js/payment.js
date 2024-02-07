@@ -89,6 +89,7 @@ paymentForm.addEventListener('submit', function(event) {
 
     updatepoint(event)
     // Call the updatepoint function here if needed
+    alert("Payment made, points updated successfully")
     
     paymentForm.reset();
 });
