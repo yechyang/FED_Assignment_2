@@ -1,3 +1,4 @@
+const APIKEY = "65c345cac384b99ce782ea34";
 const emojis = ["&#128512;", "&#128512;", "&#128513;", "&#128513;", "&#128514;", "&#128514;", "&#128507;", "&#128507;",
                 "&#128516;", "&#128516;", "&#128517;", "&#128517;", "&#128511;", "&#128511;", "&#128509;", "&#128509;"];
 var shuf_emojis = emojis.sort(() => (Math.random() > .5) ? 2 : -1);
@@ -64,7 +65,7 @@ function updatePoints(pointsEarned) {
       body: JSON.stringify(userAccount) // Send the updated user account object in the body
     };
   
-    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedtest2-4198.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

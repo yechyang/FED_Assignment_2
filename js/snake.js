@@ -1,4 +1,4 @@
-const APIKEY = "65afdc5f482ae93fcb54da42";
+const APIKEY = "65c345cac384b99ce782ea34";
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const box = 20;
@@ -133,7 +133,7 @@ function updatePoints(pointsEarned) {
       body: JSON.stringify(userAccount) // Send the updated user account object in the body
     };
   
-    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedtest2-4198.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

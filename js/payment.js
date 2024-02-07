@@ -1,4 +1,4 @@
-const APIKEY = "65afdc5f482ae93fcb54da42";
+const APIKEY = "65c345cac384b99ce782ea34";
 
 // Get a reference to the cart items container
 var cartItemsContainer = document.getElementById('cart-items-container');
@@ -88,8 +88,10 @@ paymentForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
     updatepoint(event)
+    sessionStorage.removeItem('cartItems');
     // Call the updatepoint function here if needed
     alert("Payment made, points updated successfully")
+
     
     paymentForm.reset();
 });
@@ -132,7 +134,7 @@ function updatepoint(form) {
     }
 
     // Send PUT request to update user account
-    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedtest2-4198.restdb.io/rest/account/${userAccount._id}`, settings)
         .then(response => response.json())
         .then(data => {
             console.log("Points updated successfully:", data);
@@ -148,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
 
     if (storedUserAccount && storedUserAccount.username) {
-        fetch(`https://fedassg-a6f6.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
+        fetch(`https://fedtest2-4198.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -170,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 console.log(`User ${storedUserAccount.username} not found.`);
             }
+            document.getElementById("loading-animation").style.display = "none"; // Hide the loading animation
         })
         .catch(error => {
             console.error("Error fetching user account:", error);
@@ -219,7 +222,7 @@ function sendCartDataToServer(userAccount) {
     };
 
     // Send the AJAX request
-    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedtest2-4198.restdb.io/rest/account/${userAccount._id}`, settings)
         .then(response => response.json())
         .then(data => {
             console.log("Cart data sent to server:", data);
