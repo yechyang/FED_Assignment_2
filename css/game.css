@@ -167,6 +167,17 @@ input[type="text"] {
     color: black;
 }
 
+#lottie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    z-index: 100;
+}
+
 @media screen and (max-width: 500px){
     #userPointsDisplay{
         font-size:16px;
