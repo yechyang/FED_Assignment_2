@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afdc5f482ae93fcb54da42";
+    const APIKEY = "65c345cac384b99ce782ea34";
     getContacts();
     
   function getContacts(limit = 20, all = true) {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //[STEP 8]: Make our AJAX calls
     // Once we get the response, we modify our table content by creating the content internally. We run a loop to continuously add on data
     // RESTDb/NoSql always adds in a unique id for each data; we tap on it to have our data and place it into our links 
-    fetch("https://fedassg-a6f6.restdb.io/rest/item", settings)
+    fetch("https://fedtest2-4198.restdb.io/rest/item", settings)
       .then(response => response.json())
       .then(response => {
         let content = "";

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afdc5f482ae93fcb54da42";
+    const APIKEY = "65c345cac384b99ce782ea34";
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
 
     if (storedUserAccount && storedUserAccount.username) {
-        fetch(`https://fedassg-a6f6.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
+        fetch(`https://fedtest2-4198.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -55,10 +55,10 @@ function sendMessage() {
                 window.location.href = "/FED_Assignment_2/hangman.html";
             }, 2000);
             break;
-        case "spinthewheel":
-            botMessage.textContent = "Let's play Spin the Wheel!";
+        case "memory":
+            botMessage.textContent = "Let's play Memory Game";
             setTimeout(function() {
-                window.location.href = "";
+                window.location.href = "/FED_Assigment_2/memory-game.html";
             }, 2000);
             break;
         case "minigames":

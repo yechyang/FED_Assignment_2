@@ -248,46 +248,8 @@
     font-size: 16px;
   }
   
-  .shopping-cart-list {
-    list-style: none;
-    padding: 0;
-  }
-  
   .shopping-cart-list li {
-    margin-bottom: 50px;
-    margin-left: 100px;
-  }
-  
-  .content-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .content-container img {
-    width: 130px;
-    height: 150px;
-    margin-right: 10px;
-  }
-  
-  .content-container p {
-    margin-left: 15px;
-    font-size: 20px;
-  }
-  
-  .plus-sign,
-  .one-sign,
-  .minus-sign {
-    font-size: 24px;
-    color: black;
-    margin: 10px 0;
-    margin-bottom: 28px;
-    margin-left: 50px;
-    margin-right: 0px;
-  }
-  
-  .plus-sign,
-  .minus-sign {
-    cursor: pointer;
+    margin-left: 30px;
   }
   
   .cart-button {

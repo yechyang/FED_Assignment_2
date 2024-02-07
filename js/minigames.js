@@ -1,4 +1,4 @@
-const APIKEY = "65afdc5f482ae93fcb54da42";
+const APIKEY = "65c345cac384b99ce782ea34";
 // Guess the number
 const randomNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 8;
@@ -274,7 +274,7 @@ function updatePoints(pointsEarned) {
     body: JSON.stringify(userAccount) // Send the updated user account object in the body
   };
 
-  fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
+  fetch(`https://fedtest2-4198.restdb.io/rest/account/${userAccount._id}`, settings)
     .then(response => response.json())
     .then(data => {
       console.log("Points updated successfully:", data);
