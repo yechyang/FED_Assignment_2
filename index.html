@@ -182,6 +182,11 @@
 
         // Hide the loader after a certain period of time (time taken to load was too fast to see animation) (e.g., 3000 milliseconds = 3 seconds)
         setTimeout(hideLoader, 4000);
+
+        //hiding loader after page has loaded
+        /* window.addEventListener("load", function(){
+        loader.style.display = "none";
+        }) */
     </script>
     <script>
         const slider = document.getElementById('image-slider');
