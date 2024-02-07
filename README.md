@@ -145,6 +145,7 @@ questions and clicked on the Register button
 - [BootStrap](https://getbootstrap.com/)
 - [GitHub](https://github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [Adobe XD](https://helpx.adobe.com/xd/get-started.html)
 
 ## Testing
 1. Add to cart:
