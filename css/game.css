@@ -161,6 +161,11 @@ input[type="text"] {
     background-color: #0056b3;
 }
 
+.row h4{
+    display:flex;
+    justify-content: center;
+    color: black;
+}
 
 @media screen and (max-width: 500px){
     #userPointsDisplay{
