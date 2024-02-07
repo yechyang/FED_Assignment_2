@@ -105,15 +105,27 @@ The website is catered for user who want to purchase Clothing and learn more abo
 - "POST" API sending Cart Items to database
 - Shipping address and payment Form
 - Using "GET" API to display the cart Item that are posted to database
-- Usage of points system
+- Point redemption
 - Total Price display
 - Earning points for every dollar spent using of "PUT" API to update the point in database
 
 ### All the games
 - Using "PUT" to udpate the points in the database for the games
+#### HangMan
+- Provide users with an interactive and entertaining experience centered around guessing words, encouraging active participation and offering points that can be redeemed for discounts.
+
+#### Memory Game
+- Provides users with an engaging and stimulating experience focused on testing and improving their memory skills. Upon completion, users can earn points redeemable for discounts.
+
+#### Minigames 
+- Provide users with brief, enjoyable, and often challenging experiences that are designed to entertain and engage. It is not only brief but it is also easy to understand. Furthermore providing a enjoyable experience for users to explore various games while earning points in the process.
+
+#### Snake Game
+- Provides users with an engaging and addictive experience centered around controlling a growing snake as it navigates through a game board. The difficulty of the game will gradually increase as the snake grows, letting user be more competitive as they strive for high score. Users will earn varying amounts of points based on their scores, which can be redeemed for discounts.
 
 ## Features Left to implement
-- 
+- Voucher redemption
+- Referral code
 
 ## Technologies Used
 - JQuery
@@ -156,3 +168,12 @@ The website is catered for user who want to purchase Clothing and learn more abo
 ### Acknowledgements
 - I received inspiration from Uniqlo Singapore and Iora Singapore
 - I received game inspiration for CodeNepal
+
+Minigames Inspired by: https://www.crazygames.com/t/mini
+
+Hang Game Reference: https://www.codingnepalweb.com/build-hangman-game-html-javascript/
+
+Memory Game Reference: https://www.youtube.com/watch?v=M0egyNvsN-Y
+
+Snake Game Inspired by: https://www.codingnepalweb.com/create-snake-game-htm-css-javascript/
+

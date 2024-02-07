@@ -294,7 +294,7 @@ function isUserLoggedIn() {
 document.addEventListener('DOMContentLoaded', function() {
   if (!isUserLoggedIn()) {
     alert("Please log in to play the game. Click OK to log in.");
-    window.location.href = "/FED_Assignment_2/sign-in.html"; // Redirect to the login page
+    window.location.href = "sign-in.html"; // Redirect to the login page
     return;
   }
 });

@@ -130,49 +130,49 @@ function sendMessage() {
         case "home":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/index.html";
+                window.location.href = "index.html";
             }, 2000);
             break;
         case "men":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/Men.html";
+                window.location.href = "Men.html";
             }, 2000);
             break;
         case "women":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/Women.html";
+                window.location.href = "Women.html";
             }, 2000);
             break;
         case "about":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/about.html";
+                window.location.href = "about.html";
             }, 2000);
             break;
         case "contact":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/contact.html";
+                window.location.href = "contact.html";
             }, 2000);
             break;
         case "game":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/game.html";
+                window.location.href = "game.html";
             }, 2000);
             break;
         case "payment":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/payment.html";
+                window.location.href = "payment.html";
             }, 2000);
             break;
         case "men product":
             botMessage.textContent = "Processing.....";
             setTimeout(function() {
-                window.location.href = "/FED_Assignment_2/men-product.html";
+                window.location.href = "men-product.html";
             }, 2000);
             break;
         default:
