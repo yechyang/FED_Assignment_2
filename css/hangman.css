@@ -218,6 +218,7 @@
 #timer{
     text-align: center;
     font-size:24px;
+    color:black;
 }
 
 .closeimg{
@@ -228,7 +229,7 @@
     filter: invert(100%);
 }
 
-@media (max-width: 782px) {
+@media screen and (max-width: 500px){
     .container {
         flex-direction: column;
         padding: 30px 15px;
@@ -277,5 +278,11 @@
     #hardBtn{
         width:300px;
     }
-    
+    .game-box{
+        margin-right:0;
+    }
+    .word-display{
+        padding-left:0;
+        width:360px;
+    }
 }

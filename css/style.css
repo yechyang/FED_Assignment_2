@@ -220,7 +220,7 @@ body{
     position: relative;
     width: 100%;
     margin: auto;
-    height:100vh;
+    height:90vh;
     margin-top: 140px;
     overflow: hidden;
     position: relative;
@@ -249,14 +249,18 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #fff;
+    color: whitesmoke;
     background-color: rgba(0, 0, 0, 0); /* Adjust background color with transparency */
     padding: 20px; /* Adjust padding as needed */
 }
 
 .slide-content h3 {
-    font-size: 60px;
+    font-size: 80px;
     margin-bottom: 30px;
+}
+
+.slide-content p{
+    font-size:20px;
 }
 
 .slide-button {
