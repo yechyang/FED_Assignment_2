@@ -56,7 +56,8 @@ canvas {
     }
     .instruction{
         width:350px;
-        top:37%;
+        top:45%;
+        left:9%;
         text-align: center;
     }
 }

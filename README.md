@@ -174,9 +174,10 @@ to view whether the animation was playing and looping properly while the pages w
 https://yechyang.github.io/FED_Assignment_2/ 
 
 ## Wireframe
-
+https://xd.adobe.com/view/084d674c-0e72-4307-9a4d-591aec8b3080-5d1e/
 
 ## Video Presentation
+https://ivid2.np.edu.sg/media/FED_LYC_Clothing_pitch/1_4b5scgsj
 
 ## CREDITS
 ### Media 
