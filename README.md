@@ -203,6 +203,8 @@ Snake Game Inspired by: https://www.codingnepalweb.com/create-snake-game-htm-css
 
 ### Lottie animation
 - https://lottiefiles.com/animations/material-wave-loading-yt2uoeE83o
+- https://lottiefiles.com/animations/sewing-KLLCAKnbhw
+- https://lottiefiles.com/animations/trophy-and-game-console-animation-FN0sfJQB1o
 
 ### Videos References
 - https://www.pexels.com/video/a-man-wearing-a-shirt-while-posing-9558220/
