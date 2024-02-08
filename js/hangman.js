@@ -1,29 +1,31 @@
 // Code refered from https://www.codingnepalweb.com/build-hangman-game-html-javascript/
-const APIKEY = "65afd4ed482ae9179a54da3e";
+const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
 
 document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("difficultyModal");
+    const modal = document.getElementById("difficultyModal"); // Displaying the difficulty option when DOM is loaded
     modal.style.display = "block";
 });
 
 const easyBtn = document.getElementById("easyBtn");
 const hardBtn = document.getElementById("hardBtn");
 
+// Event listeners for the difficulty buttons when clicked 
 easyBtn.addEventListener("click", function() {
-    startGame("easy");
+    startGame("easy"); // For easy mode
 });
 
 hardBtn.addEventListener("click", function() {
-    startGame("hard");
+    startGame("hard"); // For hard mode
 });
 
 
 let timerInterval;
 
+// Function to start the game based on the selected difficulty
 function startGame(difficulty) {
     if (!isUserLoggedIn()) {
         alert("Please log in to play the game. Click OK to log in.");
-        window.location.href = "sign-in.html"; // Redirect to the login page
+        window.location.href = "sign-in.html"; // Redirect to the login page if user not logged in
         return;
     }
     // Reset the game with the selected difficulty
@@ -38,16 +40,19 @@ function startGame(difficulty) {
     document.getElementById("difficultyModal").style.display = "none"; // Hide the difficulty modal
 }
 
+// Function to start the timer for the hard difficulty
 function startTimer(duration) {
     let timerDisplay = document.getElementById("timer");
 
     let timer = duration;
     timerDisplay.textContent = formatTime(timer);
 
+    // Update timer every second
     timerInterval = setInterval(function () {
         timer--;
         timerDisplay.textContent = formatTime(timer);
 
+        // End the game if time runs out
         if (timer <= 0) {
             clearInterval(timerInterval);
             ending(false);
@@ -55,6 +60,7 @@ function startTimer(duration) {
     }, 1000);
 }
 
+// Formatting the time to MM:SS format (Month and second)
 function formatTime(seconds) {
     let minutes = Math.floor(seconds / 60);
     let remainingSeconds = seconds % 60;
@@ -100,15 +106,17 @@ const ending = (isVictory) => {
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
 
+    // Calculating the total Points after the game end
     let pointsEarned = 0;
     if (isVictory) {
         if (maxGuesses === 6) {
-            pointsEarned = 10;
+            pointsEarned = 10; // For easy difficulty
         } else {
-            pointsEarned = 20;
+            pointsEarned = 20; // For hard difficulty
         }
     }
 
+    // Getting the userAccount point
     var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
 
     if (!userAccount) {
@@ -116,9 +124,9 @@ const ending = (isVictory) => {
         return;
     }
 
-    userAccount.point += pointsEarned;
+    userAccount.point += pointsEarned; // The userAccount point plus the points that user earned
 
-    sessionStorage.setItem('userAccount', JSON.stringify(userAccount));
+    sessionStorage.setItem('userAccount', JSON.stringify(userAccount)); // Update the sessionstorage with the new points earned
 
     let settings = {
         method: "PUT",
@@ -173,12 +181,12 @@ for (let i = 97; i <= 122; i++) {
     button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
 }
 
-
+// Event listener to handle play again button click
 playAgainBtn.addEventListener("click", function() {
     location.reload();
 });
 
-
+// Function to check if the user is logged in
 function isUserLoggedIn() {
     // Check if the currentUserAccount exists in sessionStorage
     var currentUserAccount = sessionStorage.getItem("userAccount");

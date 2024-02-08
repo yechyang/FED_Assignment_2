@@ -1,37 +1,47 @@
-const APIKEY = "65afd4ed482ae9179a54da3e";
-// Guess the number
+const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+// This Minigames.js consist of 4 games.
+// Guess the number Game
+// Generating random number between 1 and 100
 const randomNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 8;
 
+// Function to check user guesses 
 function checkGuess() {
   const guessInput = parseInt(document.getElementById("guessInput").value);
   const message = document.getElementById("message");
 
+  // Validate the user input for number that is out of 1 to 100
   if (isNaN(guessInput) || guessInput < 1 || guessInput > 100) {
-    message.textContent = "Please enter a valid number between 1 and 100.";
+    message.textContent = "Please enter a valid number between 1 and 100."; 
     return;
   }
-  let pointsEarned = 0;
+  let pointsEarned = 0; // Setting pointsEarned to 0 
+
+  // Decrement the attempts as user guess
   attempts--;
+
+  // Check if the guess is correct
   if (guessInput === randomNumber) {
     message.textContent = `Congratulations! You guessed the number ${randomNumber} correctly!`;
-    pointsEarned = 10;
+    pointsEarned = 10; // Earn 10 points when the guess is correct
 
-    updatePoints(pointsEarned)
+    updatePoints(pointsEarned) // Updating the points
     
-    disableInput();
+    disableInput(); // Disable input after correct guess
   } else if (guessInput < randomNumber) {
     message.textContent = `Too low! You have ${attempts} attempts left.`;
   } else {
     message.textContent = `Too high! You have ${attempts} attempts left.`;
   }
 
+  // Check if the user has run out of attempts
   if (attempts === 0) {
     message.textContent = `Sorry, you've run out of attempts. The number was ${randomNumber}.`;
-    disableInput();
+    disableInput(); // Disable again
   }
 }
 
+// Function to disable input fields and buttons
 function disableInput() {
   document.getElementById("guessInput").setAttribute("disabled", "true");
   document.querySelector("button").setAttribute("disabled", "true");
@@ -39,7 +49,7 @@ function disableInput() {
 
 
 
-// Changing games
+// Function for Changing games
 function changeGame() {
   const dropdown = document.getElementById('dropdown1');
   const selectedGame = dropdown.value;
@@ -55,13 +65,14 @@ function changeGame() {
 }
 
 
-// Rock Paper Scissors
+// Rock Paper Scissors Game
 function playerChoice(choice) {
   const choices = ["rock", "paper", "scissors"];
   const computerChoice = choices[Math.floor(Math.random() * choices.length)];
   const result = document.getElementById("result");
   let pointsEarned = 0;
 
+  // Determine the winner based on player's choice and computer's choice
   if (choice === computerChoice) {
     result.textContent = "It's a tie!";
   } else if (
@@ -70,17 +81,18 @@ function playerChoice(choice) {
     (choice === "scissors" && computerChoice === "paper")
   ) {
     result.textContent = `You win! Computer chose ${computerChoice}.`;
-    pointsEarned = 5;
+    pointsEarned = 5; // Earn 5 points for winning
   } else {
     result.textContent = `You lose! Computer chose ${computerChoice}.  Try Again`;
-    pointsEarned = -5;
+    pointsEarned = -5; // Lose 5 points for losing
   }
 
-  updatePoints(pointsEarned);
+  updatePoints(pointsEarned); // Update points earned
 }
 
 
-// Whack A Mole
+// Whack A Mole Game
+// Function to start the Whack A Mole game
 const holes = document.querySelectorAll('.hole');
 const scoreDisplay = document.getElementById('score');
 const restartButton = document.getElementById('restartButton');
@@ -88,13 +100,15 @@ let score = 0;
 let lastHole;
 let timeUp = false;
 let gameTimeout;
-let gameInProgress = false;
+let gameInProgress = false; 
 let pointsEarned
 
+// Function to make the mole pop up at different timing
 function randomTime(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
+  return Math.round(Math.random() * (max - min) + min); 
 }
 
+// Function to make the mole pop up at different hole
 function randomHole(holes) {
   const idx = Math.floor(Math.random() * holes.length);
   const hole = holes[idx];
@@ -105,6 +119,7 @@ function randomHole(holes) {
   return hole;
 }
 
+// Function to make the mole peep and not peep
 function peep() {
   const time = randomTime(200, 1000);
   const hole = randomHole(holes);
@@ -143,13 +158,14 @@ function bonk(e) {
   scoreDisplay.textContent = score;
 }
 
+// Function to calculate the points 
 function calculatePoints() {
   if (score > 8) {
-    pointsEarned = 10;
+    pointsEarned = 10; // if more than 8 increase by 10
   } else {
-    pointsEarned = -10;
+    pointsEarned = -10; // if less than 8 decrease by 10
   }
-  updatePoints(pointsEarned);
+  updatePoints(pointsEarned); // Updating point
 }
 
 holes.forEach(hole => hole.addEventListener('click', bonk));
@@ -157,11 +173,12 @@ restartButton.addEventListener('click', startGame); // Add event listener to the
 
 
 
-// Tic Tac Toe
-let currentPlayer = 'X';
-let moves = ['', '', '', '', '', '', '', '', ''];
-let gameActive = true;
+// Tic Tac Toe Game
+let currentPlayer = 'X'; // Player = 'X'
+let moves = ['', '', '', '', '', '', '', '', '']; // Store moves made on the game board
+let gameActive = true; // Showing game is active
 
+// Define winning combinations for Tic Tac Toe
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],
@@ -176,51 +193,56 @@ const winningCombos = [
 const gameBoard = document.getElementById('gameBoard');
 const statusDisplay = document.getElementById('status');
 
+// Function to check for a winner or draw
 function checkWinner() {
   for (let combo of winningCombos) {
     const [a, b, c] = combo;
     if (moves[a] && moves[a] === moves[b] && moves[a] === moves[c]) {
-      gameActive = false;
-      return moves[a];
+      gameActive = false; // Game ends when a winner is found
+      return moves[a]; // Return the winning symbol (X or O)
     }
   }
   if (moves.includes('')) {
-    return null;
+    return null; // Continue the game if there are empty cells
   } else {
-    gameActive = false;
+    gameActive = false; // Game ends in a draw
     return 'Draw';
   }
 }
 
+// Function for the computer's move in Tic Tac Toe
 function botMove() {
   let emptyCells = [];
   for (let i = 0; i < 9; i++) {
     if (moves[i] === '') {
-      emptyCells.push(i);
+      emptyCells.push(i); //Finding the empty cells and make decison
     }
   }
   const randomIndex = Math.floor(Math.random() * emptyCells.length);
-  const cellIndex = emptyCells[randomIndex];
-  moves[cellIndex] = currentPlayer;
+  const cellIndex = emptyCells[randomIndex]; // Randomly select empty cells
+  moves[cellIndex] = currentPlayer; // Updating the moves 
   gameBoard.children[cellIndex].innerText = currentPlayer;
-  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch among users and bots
 }
 
+// Function to handle a player's move in Tic Tac Toe
 function playerMove(cellIndex) {
   if (!gameActive || moves[cellIndex] !== '') return;
   
-  moves[cellIndex] = currentPlayer;
-  gameBoard.children[cellIndex].innerText = currentPlayer;
-  let pointsEarned = 0;
+  moves[cellIndex] = currentPlayer; // Updating the moves 
+  gameBoard.children[cellIndex].innerText = currentPlayer; // Update with user moves
+  let pointsEarned = 0; // Initialize point to 0
+
+  // Check for a winner after the player's move
   const winner = checkWinner();
   if (winner) {
     if (winner === 'Draw') {
       statusDisplay.innerText = "It's a draw!";
     } else {
       statusDisplay.innerText = `${winner} wins!`;
-      pointsEarned = 5
+      pointsEarned = 5 // Win earn 5 points
     }
-    gameActive = false;
+    gameActive = false; // Ending the game
   } else {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     if (currentPlayer === 'O') {
@@ -231,31 +253,32 @@ function playerMove(cellIndex) {
           statusDisplay.innerText = "It's a draw!";
         } else {
           statusDisplay.innerText = `${botWinner} wins!`;
-          pointsEarned = -5
+          pointsEarned = -5 // Lose will lose 5 points
         }
-        gameActive = false;
+        gameActive = false; // Ending the game
       }
     }
   }
-  updatePoints(pointsEarned)
+  updatePoints(pointsEarned) // Update points earned
 }
 
+// Function to reset the game
 function resetGame() {
-  currentPlayer = 'X';
-  moves = ['', '', '', '', '', '', '', '', ''];
+  currentPlayer = 'X';  // Reset current player
+  moves = ['', '', '', '', '', '', '', '', '']; // Clear all the X and O
   gameActive = true;
   statusDisplay.innerText = '';
   Array.from(gameBoard.children).forEach(cell => {
-    cell.innerText = '';
+    cell.innerText = ''; // Clear all cells on the game board
   });
 }
 
 
-
+// Function to update user points in the database
 function updatePoints(pointsEarned) {
-  let userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
+  let userAccount = JSON.parse(sessionStorage.getItem('userAccount')); // Getting userAccount from SessionStorage
   if (!userAccount) {
-    console.error('User account not found in sessionStorage.');
+    console.error('User account not found in sessionStorage.'); // No user account return
     return;
   }
 
@@ -274,6 +297,7 @@ function updatePoints(pointsEarned) {
     body: JSON.stringify(userAccount) // Send the updated user account object in the body
   };
 
+  // Send a PUT Request to update the points of the user account
   fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
     .then(response => response.json())
     .then(data => {
@@ -284,13 +308,14 @@ function updatePoints(pointsEarned) {
     });
 }
 
-
+// Function to check if the user is logged in
 function isUserLoggedIn() {
   // Check if the currentUserAccount exists in sessionStorage
   var currentUserAccount = sessionStorage.getItem("userAccount");
   return currentUserAccount !== null;
 }
 
+// Event Listener for the Loaded DOM to check if user is logged
 document.addEventListener('DOMContentLoaded', function() {
   if (!isUserLoggedIn()) {
     alert("Please log in to play the game. Click OK to log in.");

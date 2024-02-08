@@ -51,23 +51,26 @@
 // });
 
 
-
+// Execute when DOM content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e";
-    const loginForm = document.getElementById("login"); // Assuming you have a login form with id="login-form"
+    const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+    const loginForm = document.getElementById("login"); // the form with the login id
     const userAccountContainer = document.getElementById("user-account-container");
     const chatContainer = document.getElementById("chat-container");
 
+    // Retrieving information on userAccountContainerHTML and userAccount from SessionStorage
     const storedHTML = sessionStorage.getItem("userAccountContainerHTML");
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
 
+    // Check if user account HTML is stored
     if (storedHTML) {
-        userAccountContainer.innerHTML = storedHTML;
+        userAccountContainer.innerHTML = storedHTML; // If stored, set the user account container HTML and fetch account data
         getAccount();
     } else {
-        getAccount();
+        getAccount(); // If not stored, directly fetch account data
     }
 
+    /// GETTING the user account
     function getAccount(limit = 20, all = true) {
         let settings = {
             method: "GET",
@@ -78,10 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }
 
+        // Fetch the user account from the database
         fetch("https://fedassignment-d10c.restdb.io/rest/account", settings)
             .then(response => response.json())
             .then(accounts => {
-                loginForm.addEventListener("submit", function (event) {
+                loginForm.addEventListener("submit", function (event) { // EventListener for the form submission
                     event.preventDefault(); // Prevent default form submission behavior
                     const username = loginForm.elements["username"].value;
                     const password = loginForm.elements["password"].value;
@@ -90,12 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Show the chat container
                         chatContainer.style.display = "block";
 
+                        // Store user account data in sessionStorage
                         sessionStorage.setItem("userAccount", JSON.stringify(account));
                         const welcomeMessage = "<span class='black-text'>Welcome " + username + "</span>";
                         userAccountContainer.innerHTML = welcomeMessage;
                         sessionStorage.setItem("userAccountContainerHTML", userAccountContainer.outerHTML);
                         //alert("Logged in successfully!"); 
-                        document.getElementById("login").reset();
+                        document.getElementById("login").reset(); // Clearing the login form using reset
                         alert("Logged in");
                     } else {
                         alert("Invalid username or password");
@@ -108,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Function to handle sending messages in the chat same as the chatbot in the game.js
 function sendMessage() {
     var userInput = document.getElementById("user-input").value;
     var chatBox = document.getElementById("chat-box");
@@ -122,6 +128,7 @@ function sendMessage() {
     var botMessage = document.createElement("div");
     botMessage.classList.add("bot-message");
 
+    // Lowering all the user input for better consistency and leading them to the page they enter
     switch(userInput.toLowerCase()) {
         case "list":
             botMessage.textContent = "Displaying All the pages";
@@ -176,10 +183,11 @@ function sendMessage() {
             }, 2000);
             break;
         default:
-            botMessage.textContent = "I didn't understand that. Please choose a proper page.";
+            botMessage.textContent = "I didn't understand that. Please choose a proper page."; // Print "Error" message when user enter something unrecognisable
             break;
     }
 
+    // Showing the bot message
     chatBox.appendChild(botMessage);
 
     // Scroll chat box to bottom
@@ -189,6 +197,7 @@ function sendMessage() {
     document.getElementById("user-input").value = "";
 }
 
+// Event Listener for handling the user input when user press the enter button on the keyboard
 document.getElementById("user-input").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         sendMessage();

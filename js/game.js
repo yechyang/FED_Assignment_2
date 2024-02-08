@@ -1,8 +1,11 @@
+// Executing once the DOM content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e";
-    const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
+    const APIKEY = "65afd4ed482ae9179a54da3e"; // Database API KEY
+    const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount")); // Getting userAccount from SessionStorage
 
+    // Making sure the SessionStorage has userAccount
     if (storedUserAccount && storedUserAccount.username) {
+        // Getting the userAccount data
         fetch(`https://fedassignment-d10c.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
@@ -30,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
+// Function to send user message and generate bot response
 function sendMessage() {
     var userInput = document.getElementById("user-input").value;
     var chatBox = document.getElementById("chat-box");
@@ -45,6 +48,7 @@ function sendMessage() {
     var botMessage = document.createElement("div");
     botMessage.classList.add("bot-message");
 
+    // Lower case the input for consistency and letting user select where they want go
     switch(userInput.toLowerCase()) {
         case "list":
             botMessage.textContent = "Games available: hangman, minigames, snake";
@@ -77,7 +81,7 @@ function sendMessage() {
             botMessage.textContent = "I didn't understand that. Please choose from hangsnowman, spinthewheel, or clicker.";
             break;
     }
-
+    // Show the bot reply of the message
     chatBox.appendChild(botMessage);
 
     // Scroll chat box to bottom
@@ -87,9 +91,9 @@ function sendMessage() {
     document.getElementById("user-input").value = "";
 }
 
-
+// Event Listener for handling the user input when user press the enter button on the keyboard
 document.getElementById("user-input").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        sendMessage();
+        sendMessage(); 
     }
 });

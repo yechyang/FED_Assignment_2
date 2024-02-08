@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afdc5f482ae93fcb54da42";
+    const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
     let allProducts; // Store all products for filtering
 
     // Initial fetch to get all products
     getContacts();
 
+    // Function to GET all products
     function getContacts() {
         let settings = {
             method: "GET",
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }
 
+        // Getting from the API 
         fetch("https://fedassg-a6f6.restdb.io/rest/womenitem", settings)
             .then(response => response.json())
             .then(response => {
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let item = products[i];
             let imagePath = 'images/' + encodeURIComponent(item.Product) + '.png';
 
+            // This is for the HTML Content 
             content += `<div class="col-md-4">
                 <div class="box text-center"> 
                     <img src="${imagePath}" alt="${item.Product}">

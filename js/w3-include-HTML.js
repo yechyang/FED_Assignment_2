@@ -1,4 +1,6 @@
 includeHTML();
+
+// Function for header so dont need to repeat
 function includeHTML() {
   var z, i, a, file, xhttp;
   z = document.getElementsByTagName("*");

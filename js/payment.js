@@ -1,8 +1,9 @@
-const APIKEY = "65afd4ed482ae9179a54da3e";
+const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY 
 
 // Get a reference to the cart items container
 var cartItemsContainer = document.getElementById('cart-items-container');
 
+// Function to render the cartItems to the right container
 function renderCartItem(item) {
     // Create a div element for each item
     var boxDiv = document.createElement('div');
@@ -47,7 +48,7 @@ function updateTotalPrice() {
     var discountedPrice = totalPrice;
 
     if (pointsInput > 0) {
-        discountedPrice -= pointsInput * 0.20;
+        discountedPrice -= pointsInput * 0.20; // Each point = 0.2 Cent
     }
 
     // Update the total price display
@@ -56,11 +57,12 @@ function updateTotalPrice() {
 
     var paymentButton = document.getElementById('paymentButton');
     if (discountedPrice <= 0) {
-        paymentButton.disabled = true;
+        paymentButton.disabled = true; // Disabling the button when price < 0
     } else {
-        paymentButton.disabled = false;
+        paymentButton.disabled = false; // Enabling the button when price > 0 
     }
 
+     // Update available points display based on the user's points and input
     var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
     var availablePointsDisplay = document.getElementById('userPointsDisplay');
     if (userAccount) {
@@ -93,16 +95,16 @@ paymentForm.addEventListener('submit', function(event) {
     // Call the updatepoint function here if needed
     alert("Payment made, points updated successfully")
 
-    
+    // Reset the form after payment
     paymentForm.reset();
 });
 
 // Call the updateTotalPrice function initially to set the initial total price display
 updateTotalPrice();
 
-
+// Function to update user points based on the payment
 function updatepoint(form) {
-    form.preventDefault();
+    form.preventDefault(); // Prevent default submission
 
     // Retrieve user account information from sessionStorage
     var userAccount = JSON.parse(sessionStorage.getItem('userAccount'));
@@ -146,9 +148,9 @@ function updatepoint(form) {
 }//end updateform function
 
 
-
+// Function to check if the user is logged in and fetch user account data
 document.addEventListener("DOMContentLoaded", function () {
-    const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
+    const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount")); // Getting userAccount from SessionStorage
 
     if (storedUserAccount && storedUserAccount.username) {
         fetch(`https://fedassignment-d10c.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
@@ -166,10 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const userPoints = userAccount.point;
                 // Display the points on the webpage
                 document.getElementById("userPointsDisplay").textContent = `Available Points: ${userPoints}`;
-                sendCartDataToServer(userAccount);
-                totalprice(userAccount)
+                sendCartDataToServer(userAccount); // Send cart data to server
+                totalprice(userAccount) // Update total price in user account
                 userAccount.cartItems.forEach(function(cartItem) {
-                    renderCartItem(cartItem);
+                    renderCartItem(cartItem); // Render each cart item
                 });
             } else {
                 console.log(`User ${storedUserAccount.username} not found.`);
@@ -185,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Function to send cart data to the server
 function sendCartDataToServer(userAccount) {
     if (!userAccount) {
         console.error('User account not found in sessionStorage.');
@@ -235,7 +238,7 @@ function sendCartDataToServer(userAccount) {
 }
 
 
-
+// Function to update total price in user account data
 function totalprice(userAccount) {
     if (!userAccount) {
         console.error('User account not found in sessionStorage.');

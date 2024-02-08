@@ -170,6 +170,14 @@ questions and clicked on the Register button
 6. Tested the lottie animation initially by embedding tons of videos from youtube to increase loading time in order 
 to view whether the animation was playing and looping properly while the pages were loading
 
+## Github Pages
+https://yechyang.github.io/FED_Assignment_2/ 
+
+## Wireframe
+
+
+## Video Presentation
+
 ## CREDITS
 ### Media 
 - Images Created by Freepik
@@ -182,6 +190,8 @@ to view whether the animation was playing and looping properly while the pages w
 ### Acknowledgements
 - I received inspiration from Uniqlo Singapore and Iora Singapore
 - I received game inspiration for CodeNepal
+
+### External Source code
 
 Minigames Inspired by: https://www.crazygames.com/t/mini
 
@@ -305,6 +315,3 @@ Snake Game Inspired by: https://www.codingnepalweb.com/create-snake-game-htm-css
 - https://www.uniqlo.com/sg/en/products/E462318-000?colorCode=COL57&sizeCode=SMA003
 
 - https://www.uniqlo.com/sg/en/products/E470033-000?colorCode=COL69&sizeCode=SMA002
-
-## Github Pages
-https://yechyang.github.io/FED_Assignment_2/ 
