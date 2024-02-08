@@ -1,12 +1,12 @@
 // Executing once the DOM content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e"; // Database API KEY
+    const APIKEY = "65afdc5f482ae93fcb54da42"; // Database API KEY
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount")); // Getting userAccount from SessionStorage
 
     // Making sure the SessionStorage has userAccount
     if (storedUserAccount && storedUserAccount.username) {
         // Getting the userAccount data
-        fetch(`https://fedassignment-d10c.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
+        fetch(`https://fedassg-a6f6.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

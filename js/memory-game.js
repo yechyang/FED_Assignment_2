@@ -1,5 +1,5 @@
 // Code referred from https://www.youtube.com/watch?v=M0egyNvsN-Y
-const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
 // Emojis to be displayed on the game board
 const emojis = ["&#128512;", "&#128512;", "&#128513;", "&#128513;", "&#128514;", "&#128514;", "&#128507;", "&#128507;",
                 "&#128516;", "&#128516;", "&#128517;", "&#128517;", "&#128511;", "&#128511;", "&#128509;", "&#128509;"];
@@ -75,7 +75,7 @@ function updatePoints(pointsEarned) {
     };
     
     // Send a PUT Request to update the points of the user account
-    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

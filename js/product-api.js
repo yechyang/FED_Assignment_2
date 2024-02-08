@@ -1,6 +1,6 @@
 // This event listener waits for the DOMContentLoaded event, which indicates that the HTML document has been completely loaded and parsed.
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+    const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
     getContacts();
     
   function getContacts(limit = 20, all = true) {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Making the AJAX call to fetch contacts data from the API.
-    fetch("https://fedassignment-d10c.restdb.io/rest/item", settings)
+    fetch("https://fedassg-a6f6.restdb.io/rest/item", settings)
       .then(response => response.json())
       .then(response => {
         // Initialize an empty string to store the HTML content for displaying contacts.

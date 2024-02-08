@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e"; // Database API KEY
+    const APIKEY = "65afdc5f482ae93fcb54da42"; // Database API KEY
     let allProducts; // Store all products for filtering
 
     // Initial fetch to get all products
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Getting from the API 
-        fetch("https://fedassignment-d10c.restdb.io/rest/item", settings)
+        fetch("https://fedassg-a6f6.restdb.io/rest/item", settings)
             .then(response => response.json())
             .then(response => {
                 allProducts = response; // Store all products for filtering

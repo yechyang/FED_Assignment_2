@@ -1,4 +1,4 @@
-const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
 // This Minigames.js consist of 4 games.
 // Guess the number Game
 // Generating random number between 1 and 100
@@ -298,7 +298,7 @@ function updatePoints(pointsEarned) {
   };
 
   // Send a PUT Request to update the points of the user account
-  fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
+  fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
     .then(response => response.json())
     .then(data => {
       console.log("Points updated successfully:", data);

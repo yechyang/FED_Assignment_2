@@ -1,5 +1,5 @@
 // Inspired by https://www.codingnepalweb.com/create-snake-game-htm-css-javascript/ (Inspired but didn't copy)
-const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
 
 // Get the canvas element and its context for drawing
 const canvas = document.getElementById("gameCanvas");
@@ -157,7 +157,7 @@ function updatePoints(pointsEarned) {
     };
     
     // Send a PUT Request to update the points of the user account
-    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

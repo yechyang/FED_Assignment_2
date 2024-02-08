@@ -53,7 +53,7 @@
 
 // Execute when DOM content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65afd4ed482ae9179a54da3e"; // DATABASE API KEY
+    const APIKEY = "65afdc5f482ae93fcb54da42"; // DATABASE API KEY
     const loginForm = document.getElementById("login"); // the form with the login id
     const userAccountContainer = document.getElementById("user-account-container");
     const chatContainer = document.getElementById("chat-container");
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Fetch the user account from the database
-        fetch("https://fedassignment-d10c.restdb.io/rest/account", settings)
+        fetch("https://fedassg-a6f6.restdb.io/rest/account", settings)
             .then(response => response.json())
             .then(accounts => {
                 loginForm.addEventListener("submit", function (event) { // EventListener for the form submission

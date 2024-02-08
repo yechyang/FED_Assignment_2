@@ -138,7 +138,7 @@ const ending = (isVictory) => {
         body: JSON.stringify(userAccount) // Send the updated user account object in the body
     }
 
-    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassg-a6f6.restdb.io/rest/account/${userAccount._id}`, settings)
     .then(response => response.json())
     .then(data => {
         console.log("Points updated successfully:", data);
