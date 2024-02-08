@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < products.length; i++) {
             let item = products[i];
-            let imagePath = '/FED_Assignment_2/images/' + encodeURIComponent(item.Product) + '.png';
+            let imagePath = 'images/' + encodeURIComponent(item.Product) + '.png';
 
             content += `<div class="col-md-4">
                 <div class="box text-center"> 

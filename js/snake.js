@@ -1,4 +1,5 @@
-const APIKEY = "65c39dd1bd65338552113602";
+// Inspired by https://www.codingnepalweb.com/create-snake-game-htm-css-javascript/ (Inspired but didn't copy)
+const APIKEY = "65afd4ed482ae9179a54da3e";
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const box = 20;
@@ -7,13 +8,13 @@ let snake = [{ x: 9 * box, y: 10 * box }];
 let food = { x: Math.floor(Math.random() * 20) * box, y: Math.floor(Math.random() * 20) * box };
 let score = 0;
 
-//if (!isUserLoggedIn()) {
-    //alert("Please log in to play the game. Click OK to log in.");
-    //window.location.href = "/FED_Assignment_2/sign-in.html";
-//} else {
+if (!isUserLoggedIn()) {
+    alert("Please log in to play the game. Click OK to log in.");
+    window.location.href = "sign-in.html";
+} else {
     // User is logged in, proceed with the game initialization
     document.addEventListener("keydown", direction);
-//}
+}
 
 let d;
 
@@ -133,7 +134,7 @@ function updatePoints(pointsEarned) {
       body: JSON.stringify(userAccount) // Send the updated user account object in the body
     };
   
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

@@ -1,4 +1,5 @@
-const APIKEY = "65c39dd1bd65338552113602";
+// Code referred from https://www.youtube.com/watch?v=M0egyNvsN-Y
+const APIKEY = "65afd4ed482ae9179a54da3e";
 const emojis = ["&#128512;", "&#128512;", "&#128513;", "&#128513;", "&#128514;", "&#128514;", "&#128507;", "&#128507;",
                 "&#128516;", "&#128516;", "&#128517;", "&#128517;", "&#128511;", "&#128511;", "&#128509;", "&#128509;"];
 var shuf_emojis = emojis.sort(() => (Math.random() > .5) ? 2 : -1);
@@ -65,7 +66,7 @@ function updatePoints(pointsEarned) {
       body: JSON.stringify(userAccount) // Send the updated user account object in the body
     };
   
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
       .then(response => response.json())
       .then(data => {
         console.log("Points updated successfully:", data);

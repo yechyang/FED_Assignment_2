@@ -1,7 +1,7 @@
 //[STEP 0]: Make sure our document is A-OK
 document.addEventListener("DOMContentLoaded", function () {
     // What kind of interface we want at the start 
-    const APIKEY = "65c39dd1bd65338552113602";
+    const APIKEY = "65afd4ed482ae9179a54da3e";
     document.getElementById("add-update-msg").style.display = "none";
 
     //[STEP 1]: Create our submit form listener
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   
       //[STEP 5]: Send our AJAX request over to the DB and print response of the RESTDB storage to console.
-      fetch("https://testfed-475d.restdb.io/rest/account", settings)
+      fetch("https://fedassignment-d10c.restdb.io/rest/account", settings)
         .then(response => response.json())
         .then(data => {
           console.log(data);

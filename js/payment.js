@@ -1,4 +1,4 @@
-const APIKEY = "65c39dd1bd65338552113602";
+const APIKEY = "65afd4ed482ae9179a54da3e";
 
 // Get a reference to the cart items container
 var cartItemsContainer = document.getElementById('cart-items-container');
@@ -135,7 +135,7 @@ function updatepoint(form) {
     }
 
     // Send PUT request to update user account
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
         .then(response => response.json())
         .then(data => {
             console.log("Points updated successfully:", data);
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const storedUserAccount = JSON.parse(sessionStorage.getItem("userAccount"));
 
     if (storedUserAccount && storedUserAccount.username) {
-        fetch(`https://testfed-475d.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
+        fetch(`https://fedassignment-d10c.restdb.io/rest/account?q={"username":"${storedUserAccount.username}"}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -224,7 +224,7 @@ function sendCartDataToServer(userAccount) {
     };
 
     // Send the AJAX request
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
         .then(response => response.json())
         .then(data => {
             console.log("Cart data sent to server:", data);
@@ -260,7 +260,7 @@ function totalprice(userAccount) {
     };
 
     // Send the AJAX request
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
         .then(response => response.json())
         .then(data => {
             console.log("Total price updated:", data);

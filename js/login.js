@@ -53,7 +53,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const APIKEY = "65c39dd1bd65338552113602";
+    const APIKEY = "65afd4ed482ae9179a54da3e";
     const loginForm = document.getElementById("login"); // Assuming you have a login form with id="login-form"
     const userAccountContainer = document.getElementById("user-account-container");
     const chatContainer = document.getElementById("chat-container");
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         }
 
-        fetch("https://testfed-475d.restdb.io/rest/account", settings)
+        fetch("https://fedassignment-d10c.restdb.io/rest/account", settings)
             .then(response => response.json())
             .then(accounts => {
                 loginForm.addEventListener("submit", function (event) {

@@ -1,4 +1,5 @@
-const APIKEY = "65c39dd1bd65338552113602";
+// Code refered from https://www.codingnepalweb.com/build-hangman-game-html-javascript/
+const APIKEY = "65afd4ed482ae9179a54da3e";
 
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("difficultyModal");
@@ -20,11 +21,11 @@ hardBtn.addEventListener("click", function() {
 let timerInterval;
 
 function startGame(difficulty) {
-    // if (!isUserLoggedIn()) {
-    //     alert("Please log in to play the game. Click OK to log in.");
-    //     window.location.href = "sign-in.html"; // Redirect to the login page
-    //     return;
-    // }
+    if (!isUserLoggedIn()) {
+        alert("Please log in to play the game. Click OK to log in.");
+        window.location.href = "sign-in.html"; // Redirect to the login page
+        return;
+    }
     // Reset the game with the selected difficulty
     // For example, you can set maxGuesses based on difficulty
     if (difficulty === "easy") {
@@ -129,7 +130,7 @@ const ending = (isVictory) => {
         body: JSON.stringify(userAccount) // Send the updated user account object in the body
     }
 
-    fetch(`https://testfed-475d.restdb.io/rest/account/${userAccount._id}`, settings)
+    fetch(`https://fedassignment-d10c.restdb.io/rest/account/${userAccount._id}`, settings)
     .then(response => response.json())
     .then(data => {
         console.log("Points updated successfully:", data);

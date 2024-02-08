@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
     var shoppingCartList = document.querySelector('.shopping-cart-list');
     var totalPriceElement = document.getElementById('total-price'); // Add an element with id 'total-price' to display the total
     var cartQuantitySpan = document.getElementById('cart-quantity');
-    
+
     // Initialize total price
     var totalPrice = 0;
     var cartQuantity = 0;

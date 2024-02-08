@@ -114,7 +114,7 @@ questions and clicked on the Register button
 - Shipping address and payment Form
 - Using "GET" API to display the cart Item that are posted to database
 - Point redemption
-- Total Price display
+- Total Price display and "PUT" into useraccount totalprice
 - Earning points for every dollar spent using of "PUT" API to update the point in database
 
 ### All the games
