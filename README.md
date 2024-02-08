@@ -6,7 +6,7 @@
 
 Website Theme = Clothing E-Commerce
 
-## I used Iphone X for the responsiveness
+## I used Mobile-L, Iphone X for the responsiveness
 
 ## LYC Clothing Overview
 
@@ -63,6 +63,11 @@ The website is catered for user who want to purchase Clothing and learn more abo
 - Customers benefit from earning points from the final purchase, can be used to redeem vouchers for next purchase
 #### Contact details, location and operating hours
 - Clear presentation of contact details, location, and operating hours adds convenience for users seeking to connect with or visit the store.
+
+## Contribution
+- YeChyang: Implemented APIs for the Points system, cart function, Product, Product filter, feedback, Total price and cartItems, point display. Implemented the lottie animation for product and payment page. Implemented the hangman, minigame and snake game.
+
+- Louis: Implemented the APIs for login, register. Implemented the lottie animation for majority of the page. Implemented the memory game.
 
 ## Functions and Feature
 ### Existing Features
