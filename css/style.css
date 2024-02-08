@@ -106,7 +106,7 @@ body{
     justify-content: center;
     margin-top: 80px;
     flex-direction: row;
-    flex-wrap: wrap; /* Allow boxes to wrap to the next line if the screen is too small */
+    flex-wrap: wrap; 
     height: 65vh;
 }
 
@@ -132,12 +132,7 @@ body{
     background-position: center;
     position: relative;
 }
-/*.box img {
-    max-width: 100%;
-    height: 70%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}*/
+
 .center-content {
     text-align: center;
 }
@@ -166,7 +161,7 @@ body{
 
 
 .background-responsive-img{
-    background-image: url('/FED_Assignment_2/images/abstract-smooth-brown-wall-background-layout-designstudioroomweb-templatebusiness-report-with-smooth.jpg');
+    background-image: url('../images/abstract-smooth-brown-wall-background-layout-designstudioroomweb-templatebusiness-report-with-smooth.jpg');
     background-size: cover;
     background-position: center;
     background-color: transparent;
@@ -191,7 +186,7 @@ body{
     color: whitesmoke;
     top: 62%;
     left: 50%;
-    transform: translate(-50%); /*align the button to the center*/
+    transform: translate(-50%); 
     transition: color 0.3s ease; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
@@ -250,8 +245,8 @@ body{
     transform: translate(-50%, -50%);
     text-align: center;
     color: whitesmoke;
-    background-color: rgba(0, 0, 0, 0); /* Adjust background color with transparency */
-    padding: 20px; /* Adjust padding as needed */
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px; 
 }
 
 .slide-content h3 {
@@ -267,8 +262,8 @@ body{
     padding: 12px 60px;
     margin-top:20px;
     font-size: 20px;
-    background-color: #2664ff; /* Adjust button background color */
-    color: whitesmoke; /* Adjust button text color */
+    background-color: #2664ff; 
+    color: whitesmoke; 
     border: none;
     cursor: pointer;
 }
@@ -316,13 +311,13 @@ body{
 @media screen and (max-width: 500px){
     .image-container {
         position: relative;
-        height: 87vh; /* Reduced height for smaller screens */
+        height: 87vh; 
         overflow: hidden;
     }
 
     .Home-image {
         width: 100%;
-        height: 680px; /* Adjusted for smaller screens */
+        height: 680px; 
         object-fit: cover;
     }
 
@@ -353,7 +348,7 @@ body{
     
 
     .branding {
-        font-size: 28px; /* Reduced font size for smaller screens */
+        font-size: 28px; 
     }
 
     .buttons-container {
@@ -380,29 +375,29 @@ body{
 
     .content {
         text-align: center;
-        margin-top: 10px; /* Reduced margin for smaller screens */
+        margin-top: 10px; 
     }
 
     .box-container {
         display: flex;
         justify-content: center;
-        margin-top: 0px; /* Reduced margin for smaller screens */
-        flex-direction: column; /* Changed direction for smaller screens */
-        height: 1200px; /* Adjusted height for smaller screens */
+        margin-top: 0px; 
+        flex-direction: column; 
+        height: 1200px; 
     }
 
     .box {
         width: 80%;
         height:350px;
-        margin: 10px auto; /* Centered and adjusted margin for smaller screens */
+        margin: 10px auto; 
     }
 
     .box-image {
-        height: 100%; /* Adjusted height for smaller screens */
+        height: 100%; 
     }
 
     .box h2 {
-        font-size: 20px; /* Reduced font size for smaller screens */
+        font-size: 20px; 
     }
 
     .background-responsive-img{
@@ -420,7 +415,6 @@ body{
         top: 83%;
     }
     
-    /* Text inside background image */
     .text_above_button{
         text-align:center;
         color: black;

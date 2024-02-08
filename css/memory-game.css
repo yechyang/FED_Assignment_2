@@ -11,6 +11,7 @@ body{
     min-height: 100vh;
     background-color: rgb(69, 65, 100);
 }
+/* Memory game container */
 .container{
     position: relative;
     display: flex;
@@ -71,7 +72,6 @@ h2{
     position: absolute;
     inset: 0;
     background-color: blanchedalmond;
-    /* opacity: 0.70; */  /* Testing purposes, can delete this or comment it out if dont need.*/
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;

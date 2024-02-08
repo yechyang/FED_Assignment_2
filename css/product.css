@@ -43,6 +43,7 @@
   margin-left: 10px;
 }
 
+/* Cart container */
 .custom-container {
   position: fixed;
   top: 0;
@@ -57,6 +58,7 @@
 
 }
 
+/* Insider the cart items */
 .cartTab {
   position: relative;
   width: 90%;
@@ -87,6 +89,7 @@
   color: black;
 }
 
+/* The remove all button */
 .Action {
   font-size: 18px;
   font-weight: 600;
@@ -96,6 +99,7 @@
 }
 
 
+/* The items inside the cart */
 .shopping-cart-list {
   list-style: none;
   padding: 0;
@@ -123,7 +127,7 @@
 }
 
 
-
+/* The quantity inside the cart */
 .plus-sign,
 .one-sign,
 .minus-sign {
@@ -161,7 +165,7 @@
   font-size: 20px;
 }
 
-
+/* Animation during loading */
 #loading-animation {
   width: 300px;
   height: 300px;
