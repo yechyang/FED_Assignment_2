@@ -51,7 +51,7 @@
 }
 
 .signin-background{
-    background-image: url('/FED_Assignment_2/images/woman-with-flying-hair.jpg');
+    background-image: url('../images/woman-with-flying-hair.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-color: transparent;

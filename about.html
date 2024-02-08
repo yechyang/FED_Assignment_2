@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    <!--Lottie Animation-->
     <div id = "lottie">
         <dotlottie-player src="https://lottie.host/4dc19876-47f0-4fc1-b22e-a532551f0c48/fEwXDtafGl.json" 
         background="transparent" 
@@ -22,6 +23,7 @@
         loop autoplay></dotlottie-player>
     </div>
 
+    <!--Header-->
     <header>
         <img src="/FED_Assignment_2/images/tshirt.png" alt="Logo" class="logo">
         <div class="logo-container">
@@ -42,23 +44,26 @@
         <a href="/FED_Assignment_2/game.html">Game</a>
     </nav>
 
+    <!--Image at the top-->
     <div class="image-container">
         <img class="about-image" src="images/grayscale-shot-male-walking-along-pedestrian-zone-near-building.jpg" alt="">
         <div class="branding">LYC Clothing</div>
     </div>
 
+    <!--About us information-->
     <div class="about-text">
         <h1 style="text-decoration: underline;">About Us</h1>
         <p>Welcome to LYC Clothing, where fashion meets passion! At LYC Clothing, we believe that clothing is an expression of individuality, a canvas to showcase your unique style. Established in 2020, our online store has quickly become a go-to destination for fashion-forward individuals seeking the latest trends and timeless classics.</p><br>
         <p>Our Philosophy: Clothing, for us, is more than just fabric and stitches; it's a powerful medium for self-expression. We believe that every individual is a masterpiece, and their style is a canvas waiting to be painted with creativity and personality. At LYC Clothing, we empower you to embrace your uniqueness, encouraging you to tell your story through the outfits you choose.</p>
     </div>
 
+    <!--Promise information below about us-->
     <div class="promise-text">
         <h1 style="text-decoration: underline;">Our Promise</h1>
         <p><strong>Quality Assurance:</strong> Every item at Trendy Threads is carefully inspected to ensure it meets our high standards of quality and craftsmanship.</p>
         <p><strong>Fast and Reliable Shipping:</strong> We understand the excitement of receiving your new wardrobe additions promptly. That's why we prioritize fast and reliable shipping to get your order to you as soon as possible.</p>
         <p><strong>Secure Shopping Experience: </strong> Your privacy and security are of the utmost importance to us. Our website uses state-of-the-art encryption technology to ensure your information is protected.</p>
-        
+        <!--Icon images-->
         <div class="row justify-content-center">
             <div class="col-md-2 text-center">
                 <img src="images/quality-control.png" alt="Icon 1" class="shrink-image">
@@ -73,6 +78,7 @@
     </div>
     <hr>
 
+    <!--Container for the 4 images-->
     <div style="margin-top:50px;">
         <h1 style="text-align:center">Images</h1>
         <div class="container">
@@ -119,6 +125,7 @@
         </div>
     </section>
 
+    <!--Cart display-->
     <div class="custom-container">
         <div class="cartTab" style="display: none;">
           <div class="Header">
@@ -129,10 +136,11 @@
           <p id="total-price">Total Price: $0.00</p>
           <button class="cart-button">Pay Now</button>
         </div>
-      </div>
+    </div>
 
     <footer w3-include-html="footer.html"></footer>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <!--Lottie animation at the start--> 
     <script>
         var loader = document.getElementById("lottie");
 
@@ -144,12 +152,16 @@
         setTimeout(hideLoader, 2000);
 
     </script>
+    <!--For the footer-->
     <script src="js/w3-include-HTML.js"></script>   
     <script>
         includeHTML();
     </script>  
+    <!--For the Welcome Username text display on the top right-->
     <script src="js/login.js"></script>
+    <!--For cart-->
     <script src="js/cart.js"></script>
+    <!--For the slider in about page-->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize the current index to 1 and show the corresponding text

@@ -10,9 +10,10 @@
 </head>
 <body>
     <div>
-        <h1 style="text-align: center; color:black;">HangSnowman Game</h1>
+        <h1 style="text-align: center; color:black;">HangSnowman Game</h1> <!--Title of game-->
     </div>
 
+    <!--Difficulty display-->
     <div class="difficulty-modal" id="difficultyModal">
         <div class="modal-content">
             <h2>Instruction</h2>
@@ -27,6 +28,7 @@
         <a href="game.html"><img src="images/close.png" class="closeimg"></a>
     </div>
 
+    <!--Game over result display-->
     <div class="game-modal">
         <div class="content">
             <img src="#" alt="gif">
@@ -35,6 +37,7 @@
             <button class="play-again">Play Again</button>
         </div>
     </div>
+    <!--Hangman images and keyboard-->
     <div class="hangman-container">
         <div class="hangman-box">
             <img src="#" draggable="false" alt="hangman-img">
@@ -49,7 +52,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Containing word list-->
     <script src="js/word.js"></script>
+    <!--The script for the hangman Game-->
     <script src="js/hangman.js"></script>
 </body>
 </html>

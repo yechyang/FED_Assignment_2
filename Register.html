@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="css/register.css">
     <link rel="stylesheet" href="css/product.css">
 </head>
-<body class="register-background">
+<body class="register-background"> <!--Background image for page-->
+    <!--Header-->
     <header w3-include-html="header.html"></header>
 
+    <!--Register form-->
     <section id="register">
         <div id="add-update-msg">
-			<div class="alert alert-success" role="alert">
-				Account record successfully added
+			<div class="alert alert-success" role="alert"><!--Message when updated sucessfully-->
+				Account record successfully added 
 			</div>
 		</div>
-        <div class="form" id="add-contact">
+        <div class="form" id="add-contact"> <!--Register form-->
             <form id="add-contact-form">
                 <h3><u>Signing Up</u></h3>
 
@@ -49,25 +51,14 @@
         </div>
     </section>
 
-    <div class="custom-container">
-        <div class="cartTab" style="display: none;">
-          <div class="Header">
-            <h3 class="Heading">Shopping Cart</h3>
-            <h5 class="Action" id="remove-all">Remove all</h5>
-          </div>
-          <ul class="shopping-cart-list"></ul>
-          <p id="total-price">Total Price: $0.00</p>
-          <button class="cart-button">Pay Now</button>
-        </div>
-      </div>
-
+    <!--Footer-->
     <footer w3-include-html="footer.html"></footer>
     <script src="js/register.js"></script>
     <script>
         includeHTML();
     </script>
+    <!--Javascript for Header and Footer-->
     <script src="js/w3-include-HTML.js"></script>
-    <script src="js/cart.js"></script>
     
 </body>
 </html>

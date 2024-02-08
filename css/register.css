@@ -4,6 +4,8 @@
     margin: 50px 0;
     color:whitesmoke;
 }
+
+/* Message once register form sent sucessfully */
 #add-update-msg {
     position: absolute;
     top: 210px !important; 
@@ -79,9 +81,8 @@
 }
 
 .register-background{
-    background-image: url('/FED_Assignment_2/images/woman-with-flying-hair.jpg');
+    background-image: url('../images/woman-with-flying-hair.jpg');
     background-size: cover;
-
     background-color: transparent;
     padding: 0;
     position: relative;

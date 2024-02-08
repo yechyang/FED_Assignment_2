@@ -14,7 +14,7 @@
     
   </head>
   <body>
-
+    <!--Lottie Animation-->
     <div id = "lottie">
       <dotlottie-player src="https://lottie.host/4dc19876-47f0-4fc1-b22e-a532551f0c48/fEwXDtafGl.json" 
       background="transparent" 
@@ -23,8 +23,10 @@
       loop autoplay></dotlottie-player>
     </div>
 
+    <!--Header using script-->
     <header w3-include-html="header.html"></header>
 
+    <!--Form Input for feedback user have-->
     <div class="container mt-5" style="margin-bottom:40px;">
       <div class="row justify-content-center">
           <div class="col-md-6">
@@ -47,16 +49,18 @@
                       <textarea class="form-control" id="message" rows="3" placeholder="Enter your message" required></textarea>
                   </div>
   
-                  <button type="submit" class="btn btn-dark btn-block" onclick="contactform(event)">Submit</button>
+                  <button type="submit" class="btn btn-dark btn-block" onclick="contactform(event)">Submit</button> <!--Display lottie animation-->
               </form>
             </div>
         </div>
     </div>
     
+    <!--Lottie animation for form submit-->
     <div class="lottie" id="lottieContainer" style="display: none;">
         <dotlottie-player src="https://lottie.host/b1b50a52-ba8f-429a-9ac9-853a4046c501/4F354MVXzo.json" background="transparent" speed="1" style="width: 100px; height: 100px" direction="1" mode="normal" loop autoplay></dotlottie-player>
     </div>
 
+    <!--Google map implementation-->
     <div class="map-container" style="margin-top:60px;">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1994.3969930072637!2d103.78839164320159!3d1.29834833688653!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a45642254c5%3A0x49c31d8c519133ec!2s6%20Fusionopolis%20Wy%2C%20Singapore%20138636!5e0!3m2!1sen!2ssg!4v1705596600692!5m2!1sen!2ssg" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -78,6 +82,7 @@
       </div>
     </div>
 
+    <!--For the cart-->
     <div class="custom-container">
       <div class="cartTab" style="display: none;">
         <div class="Header">
@@ -90,9 +95,11 @@
       </div>
     </div>
 
+    <!--Footer using script-->
     <footer w3-include-html="footer.html"></footer>
 
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <!--Lottie animation-->
     <script>
       var loader = document.getElementById("lottie");
 
@@ -107,13 +114,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--Using POST to send to database-->
     <script src="js/contact.js"></script>
 
+    <!--For the header and footer-->
     <script src="js/w3-include-HTML.js"></script> 
     <script>
       includeHTML();
     </script>
+    <!--Displaying the welcome username-->
     <script src="js/login.js"></script>
+    <!--For Cart-->
     <script src="js/opencart.js"></script>
     
     

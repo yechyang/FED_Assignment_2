@@ -27,7 +27,7 @@ header {
     display: flex;
 }
 
-
+/* User account and cart icon */
 .additional-logo {
     max-width: 30px;
     max-height:30px;
@@ -36,6 +36,7 @@ header {
     cursor: pointer;
 }
 
+/* Navigation bar */
 nav {
     display: flex;
     justify-content: center;
@@ -56,10 +57,10 @@ nav a:hover {
     color: gray; 
 }
 
+/* Span beside cart icon */
 .market-span {
-    /* Add your styling here */
-    color: black; /* Example color */
-    margin-left: 0px; /* Example margin */
+    color: black;
+    margin-left: 0px;
 }
 
 .black-text {
@@ -70,12 +71,12 @@ nav a:hover {
 
 @media screen and (max-width: 500px) {
     header {
-        font-size: 14px; /* Reduce header font size for smaller screens */
+        font-size: 14px;/
     }
 
     .logo-container {
-        top: 10px; /* Adjusted for smaller screens */
-        right: 10px; /* Adjusted for smaller screens */
+        top: 10px;
+        right: 10px; 
     }
 
     .logo {
@@ -95,14 +96,14 @@ nav a:hover {
     }
 
     nav {
-        display: flex; /* Display the nav on smaller screens */
+        display: flex; 
         justify-content: center;
         background-color: #9f9a94;
         padding: 2px;
     }
 
     nav a {
-        margin: 0; /* Remove the margin for links */
+        margin: 0;
         font-size:14px;
         padding:6px;
     }

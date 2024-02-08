@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/normalize.css">
 </head>
 
-<body class="signin-background">
-    <!--<header w3-include-HTML="header.html"></header>-->
+<body class="signin-background"> <!--Background image for page-->
+    <!--Header-->
     <header>
         <img src="/FED_Assignment_2/images/tshirt.png" alt="Logo" class="logo">
         <div class="logo-container">
@@ -31,6 +31,7 @@
         <a href="/FED_Assignment_2/game.html">Game</a>
     </nav>
 
+    <!--Chatbot display after form submission-->
     <div class="chat-container" id="chat-container" style="display: none;">
         <div class="chat-box" id="chat-box">
             <div class="bot-message">Welcome to the LYC Bot!</div>
@@ -40,6 +41,7 @@
         <button class="bot-button" onclick="sendMessage()">Send</button>
     </div>
 
+    <!--Login form-->
     <section id="login-form">
         <form id="login">
             <h2 id="login-title">Login</h2>
@@ -66,6 +68,7 @@
     </section>
     
     <script src="js/w3-include-HTML.js"></script>
+    <!--Getting logging details from Database-->
     <script src="js/login.js"></script>
 
 </body>
